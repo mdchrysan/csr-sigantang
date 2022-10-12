@@ -5,8 +5,37 @@
     <div>
         <h1>Galeri Foto</h1>
     </div>
-    <div class="card text-bg-dark">
-        <img src="https://www.summitbsa.org/wp-content/uploads/2019/10/placeholder.png" class="card-img" alt="gallery image">
+    <div class="row row-cols-1 row-cols-md-3 g-4 p-4">
+        <div class="col">
+            <div class="h-100">
+                <img src="https://www.summitbsa.org/wp-content/uploads/2019/10/placeholder.png" class="card-img" alt="gallery image">
+            </div>
+        </div>
+        <div class="col">
+            <div class="h-100">
+                <img src="https://www.summitbsa.org/wp-content/uploads/2019/10/placeholder.png" class="card-img" alt="gallery image">
+            </div>
+        </div>
+        <div class="col">
+            <div class="h-100">
+                <img src="https://www.summitbsa.org/wp-content/uploads/2019/10/placeholder.png" class="card-img" alt="gallery image">
+            </div>
+        </div>
+        <div class="col">
+            <div class="h-100">
+                <img src="https://www.summitbsa.org/wp-content/uploads/2019/10/placeholder.png" class="card-img" alt="gallery image">
+            </div>
+        </div>
+        <div class="col">
+            <div class="h-100">
+                <img src="https://www.summitbsa.org/wp-content/uploads/2019/10/placeholder.png" class="card-img" alt="gallery image">
+            </div>
+        </div>
+        <div class="col">
+            <div class="h-100">
+                <img src="https://www.summitbsa.org/wp-content/uploads/2019/10/placeholder.png" class="card-img" alt="gallery image">
+            </div>
+        </div>
     </div>
 </section>
 <section class="content" id="instagram-photos">

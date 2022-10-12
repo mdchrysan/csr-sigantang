@@ -13,3 +13,7 @@ html {
 .content {
     padding: 10px 100px;
 }
+
+#curr-article-img {
+    width: 50%;
+}

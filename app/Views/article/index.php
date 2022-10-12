@@ -2,7 +2,7 @@
 
 <?= $this->section('content'); ?>
 <section class="content" id="article-section">
-    <div>
+    <div class="content-title">
         <h1>Berita Terkini</h1>
     </div>
     <div class="container-fluid">
@@ -17,7 +17,7 @@
                 <img src="https://www.summitbsa.org/wp-content/uploads/2019/10/placeholder.png" class="card-img-top" alt="article image">
                 <div class="card-body">
                     <h5 class="card-title">Judul Artikel</h5>
-                    <p class="card-text">Tanggal Terbit</p>
+                    <p class="card-text">Tanggal Publikasi</p>
                 </div>
             </div>
         </div>
@@ -26,7 +26,7 @@
                 <img src="https://www.summitbsa.org/wp-content/uploads/2019/10/placeholder.png" class="card-img-top" alt="article image">
                 <div class="card-body">
                     <h5 class="card-title">Judul Artikel</h5>
-                    <p class="card-text">Tanggal Terbit</p>
+                    <p class="card-text">Tanggal Publikasi</p>
                 </div>
             </a>
         </div>
@@ -35,7 +35,7 @@
                 <img src="https://www.summitbsa.org/wp-content/uploads/2019/10/placeholder.png" class="card-img-top" alt="article image">
                 <div class="card-body">
                     <h5 class="card-title">Judul Artikel</h5>
-                    <p class="card-text">Tanggal Terbit</p>
+                    <p class="card-text">Tanggal Publikasi</p>
                 </div>
             </div>
         </div>
@@ -44,7 +44,7 @@
                 <img src="https://www.summitbsa.org/wp-content/uploads/2019/10/placeholder.png" class="card-img-top" alt="article image">
                 <div class="card-body">
                     <h5 class="card-title">Judul Artikel</h5>
-                    <p class="card-text">Tanggal Terbit</p>
+                    <p class="card-text">Tanggal Publikasi</p>
                 </div>
             </div>
         </div>
@@ -53,7 +53,7 @@
                 <img src="https://www.summitbsa.org/wp-content/uploads/2019/10/placeholder.png" class="card-img-top" alt="article image">
                 <div class="card-body">
                     <h5 class="card-title">Judul Artikel</h5>
-                    <p class="card-text">Tanggal Terbit</p>
+                    <p class="card-text">Tanggal Publikasi</p>
                 </div>
             </div>
         </div>
@@ -62,7 +62,7 @@
                 <img src="https://www.summitbsa.org/wp-content/uploads/2019/10/placeholder.png" class="card-img-top" alt="article image">
                 <div class="card-body">
                     <h5 class="card-title">Judul Artikel</h5>
-                    <p class="card-text">Tanggal Terbit</p>
+                    <p class="card-text">Tanggal Publikasi</p>
                 </div>
             </div>
         </div>
