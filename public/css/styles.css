@@ -9,3 +9,7 @@
 html {
     scroll-behavior: smooth;
 }
+
+.content {
+    padding: 10px 100px;
+}

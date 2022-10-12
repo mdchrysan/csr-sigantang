@@ -9,16 +9,16 @@
         <div class="collapse navbar-collapse" id="navbarLP">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active" aria-current="page" href="<?= base_url('/'); ?>">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Artikel</a>
+                    <a class="nav-link" href="<?= base_url('/article'); ?>">Artikel</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Galeri</a>
+                    <a class="nav-link" href="<?= base_url('/gallery'); ?>">Galeri</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#lokasi">Lokasi</a>
+                    <a class="nav-link" href="<?= base_url('/#lokasi'); ?>">Lokasi</a>
                 </li>
             </ul>
         </div>
