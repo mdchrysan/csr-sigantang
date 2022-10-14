@@ -7,8 +7,17 @@
     <a class="btn btn-primary btn-xl" href="#tentang">Jelajahi</a>
 </header>
 <section class="content" id="tentang">
-    <h1 class="content-heading">Tentang<br>Desa Sigantang</h1>
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, molestias? Ducimus magnam tempore quam, suscipit consequatur eveniet aliquam sequi nisi, quisquam tempora animi adipisci cumque labore qui atque temporibus odit.</p>
+    <div class="row">
+        <div class="col-md-6">
+            <img src="\img\backdrop-about.jpg" alt="Foto Backdrop">
+        </div>
+        <div class="col-md-6">
+            <div class="mx-3">
+                <h1 class="content-heading">Tentang<br>Desa Sigantang</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, molestias? Ducimus magnam tempore quam, suscipit consequatur eveniet aliquam sequi nisi, quisquam tempora animi adipisci cumque labore qui atque temporibus odit.</p>
+            </div>
+        </div>
+    </div>
 </section>
 <section class="content" id="fasilitas">
     <h1 class="content-heading">Fasilitas</h1>
