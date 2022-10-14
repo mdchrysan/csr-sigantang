@@ -1,0 +1,45 @@
+#landing-navbar {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: #fafafa;
+}
+
+.navbar-toggler {
+    padding: 0.75rem;
+    font-size: 0.75rem;
+}
+
+.navbar-brand img{
+    height: 3rem;
+}
+
+.nav-link {
+    font-size: 0.95rem;
+    color: white;
+    text-shadow: 2px 6px 4px rgba(0, 82, 34, 0.3);
+
+}
+
+.nav-link:hover, .nav-link:active {
+    color: greenyellow;
+}
+
+@media only screen and (min-width: 992px) {
+    #landing-navbar {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        border: none;
+        background-color: transparent;
+        transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
+    }
+
+    .navbar-brand {
+        font-size: 3em;
+        transition: font-size 0.3s ease-in-out;
+    }
+
+    .navbar-brand img {
+        height: 4rem;
+        transition: height 0.3s ease-in-out;
+    }
+}

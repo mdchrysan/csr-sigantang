@@ -1,12 +1,11 @@
 <?= $this->extend('layout/template'); ?>
 
 <?= $this->section('content'); ?>
-<section class="content" id="masthead-beranda">
-    <div class="masthead">
-        <!-- <img src="/img/landing-bg.jpg" alt="masthead image"> -->
-        <h1>Sigantang</h1>
-    </div>
-</section>
+<header class="masthead" id="masthead-beranda">
+    <div class="masthead-heading">Sigantang</div>
+    <div class="masthead-subheading">Desa Wisata Bernuansa Alam dengan Kearifan Lokal</div>
+    <a class="btn btn-primary btn-xl" href="#tentang">Jelajahi</a>
+</header>
 <section class="content" id="tentang">
     <h1>Tentang<br>Desa Sigantang</h1>
 </section>
@@ -19,11 +18,21 @@
 </section>
 <section class="content" id="video">
     <h1>Video ...?</h1>
+    <div>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/yypDW9wxtxo?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
 </section>
 <section class="content" id="lokasi">
     <h1>Lokasi</h1>
-    <h2>1.5 km dari Stasiun Nambo!</h2>
-    <h3>KP Lebak Desa Nambo<br>Kecamatan Klapanunggal<br>Kabupaten Bogor<br>Jawa Barat<br>16710</h3>
-    <h3>Narahubung:<br>Bapak Abece<br>0812-3456-7890</h3>
+    <div class="row">
+        <div class="col">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15857.919093178038!2d106.9163047!3d-6.4607366!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x292a150fad7dc937!2sTaman%20Wisata%20Sigantang!5e0!3m2!1sen!2sid!4v1665562008065!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="col">
+            <h2>1.5 km dari Stasiun Nambo!</h2>
+            <h3>KP Lebak Desa Nambo<br>Kecamatan Klapanunggal<br>Kabupaten Bogor<br>Jawa Barat<br>16710</h3>
+            <h3>Narahubung:<br>Bapak Abece<br>0812-3456-7890</h3>
+        </div>
+    </div>
 </section>
 <?= $this->endSection(); ?>
