@@ -6,7 +6,15 @@
 
 .navbar-toggler {
     padding: 0.75rem;
-    font-size: 0.75rem;
+    font-size: 1.5rem;
+}
+
+.navbar-toggler-icon {
+    color: var(--main-green);
+}
+
+.navbar-toggler-icon:hover {
+    text-shadow: var(--green-text-shadow);
 }
 
 .navbar-brand img{
@@ -14,14 +22,17 @@
 }
 
 .nav-link {
-    font-size: 0.95rem;
-    color: white;
-    text-shadow: 2px 6px 4px rgba(0, 82, 34, 0.3);
+    font-size: 1rem;
+    color: var(--main-green);
+    text-shadow: var(--black-text-shadow);
+    font-family: var(--main-font-family);
+    letter-spacing: var(--headings-letter-spacing);
 
 }
 
 .nav-link:hover, .nav-link:active {
-    color: var(--sub-green);
+    text-shadow: var(--green-text-shadow);
+    color: var(--main-green);
 }
 
 @media only screen and (min-width: 992px) {
@@ -30,16 +41,16 @@
         padding-bottom: 1.5rem;
         border: none;
         background-color: transparent;
-        transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
+        transition: padding-top 2s ease-in-out, padding-bottom 2s ease-in-out;
     }
-
+ 
     .navbar-brand {
         font-size: 3em;
-        transition: font-size 0.3s ease-in-out;
+        transition: font-size 2s ease-in-out;
     }
 
     .navbar-brand img {
         height: 4rem;
-        transition: height 0.3s ease-in-out;
+        transition: height 2s ease-in-out;
     }
 }

@@ -1,6 +1,7 @@
 .masthead {
     color: white;
-    padding: 6rem 0;
+    height: 100vh;
+    padding-top: 40vh;
     text-align: center;
     background-image: url("../../img/landing-bg.jpg");
     background-size: cover;
@@ -25,3 +26,25 @@
     line-height: 1.5rem;
     margin-bottom: 25px;
 }
+
+/* @media only screen and (min-width: 768px) {
+    .masthead {
+        padding-top: 12.5rem + 4.5rem;
+        padding-bottom: 12.5rem;
+    }
+
+    .masthead-heading {
+        font-size: 4.5rem;
+        font-weight: 700;
+        line-height: 4.5rem;
+        margin-bottom: 4rem;
+    }
+
+    .masthead-heading {
+        font-size: 2.25rem;
+        font-style: italic;
+        line-height: 2.25rem;
+        margin-bottom: 2rem;
+    }
+
+} */
