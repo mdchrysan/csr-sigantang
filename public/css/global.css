@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 4.5rem;
+}
+
+body {
+    position: relative;
+    overflow-x: hidden;
+    font-family: var(--main-font-family);
+    background-color: var(--sub-green);
+}
+
+p {
+    line-height: var(--line-height-lg);
+}
+
+.content {
+    padding: 10px 100px;
+    /* padding: 6rem 0; */
+}
+
+h1.content-heading {
+    font-size: 2.5rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-family: var(--headings-font-family);
+}
+
+@media only screen and (min-width: 769px) {
+    section {
+        padding: 9rem 0;
+    }
+}

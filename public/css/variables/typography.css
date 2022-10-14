@@ -1,0 +1,10 @@
+:root {
+    --main-font-family: 'Montserrat', sans-serif;
+    --headings-font-family: 'Leckerli One', cursive;
+    --subheadings-font-family: 'Roboto Slab', serif;
+
+    --headings-font-weight: 700;
+    --headings-letter-spacing: 0.0625em;
+
+    --line-height-lg: 1.75;
+}

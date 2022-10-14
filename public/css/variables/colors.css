@@ -1,0 +1,6 @@
+:root {
+    --main-green: darkgreen;
+    --sub-green: rgb(170, 255, 0);
+    --main-landing-navbar: #fafafa;
+    --black-text-shadow: 2px 6px 4px rgba(0, 0, 0, 0.3);
+}

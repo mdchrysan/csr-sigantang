@@ -1,21 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Leckerli+One&family=Montserrat&family=Roboto+Slab&display=swap');
 
+@import "./global.css";
 @import "./components/navbar.css";
 @import "./sections/masthead.css";
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-.content {
-    padding: 10px 100px;
-}
+@import "./variables/colors.css";
+@import "./variables/typography.css";
 
 #curr-article-img {
     width: 50%;

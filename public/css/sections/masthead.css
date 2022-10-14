@@ -10,16 +10,16 @@
 }
 
 .masthead-heading {
-    text-shadow: 2px 6px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: var(--black-text-shadow);
     font-size: 5rem;
     font-weight: 700;
     line-height: 3.25rem;
     margin-bottom: 2rem;
-    font-family: 'Leckerli One', cursive;
+    font-family: var(--headings-font-family);
 }
 
 .masthead-subheading {
-    text-shadow: 2px 6px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: var(--black-text-shadow);
     font-size: 1.5rem;
     font-style: italic;
     line-height: 1.5rem;

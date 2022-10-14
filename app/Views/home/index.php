@@ -7,23 +7,24 @@
     <a class="btn btn-primary btn-xl" href="#tentang">Jelajahi</a>
 </header>
 <section class="content" id="tentang">
-    <h1>Tentang<br>Desa Sigantang</h1>
+    <h1 class="content-heading">Tentang<br>Desa Sigantang</h1>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, molestias? Ducimus magnam tempore quam, suscipit consequatur eveniet aliquam sequi nisi, quisquam tempora animi adipisci cumque labore qui atque temporibus odit.</p>
 </section>
 <section class="content" id="fasilitas">
-    <h1>Fasilitas</h1>
+    <h1 class="content-heading">Fasilitas</h1>
 </section>
 <section class="content" id="jumlahPengunjung">
-    <h1>1234+ Pengunjung</h1>
+    <h1 class="content-heading">1234+ Pengunjung</h1>
     <p>Terima kasih telah berkunjung dan turut mensejahterakan masyarakat lokal!</p>
 </section>
 <section class="content" id="video">
-    <h1>Video ...?</h1>
+    <h1 class="content-heading">Video ...?</h1>
     <div>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/yypDW9wxtxo?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 </section>
 <section class="content" id="lokasi">
-    <h1>Lokasi</h1>
+    <h1 class="content-heading">Lokasi</h1>
     <div class="row">
         <div class="col">
             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15857.919093178038!2d106.9163047!3d-6.4607366!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x292a150fad7dc937!2sTaman%20Wisata%20Sigantang!5e0!3m2!1sen!2sid!4v1665562008065!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
