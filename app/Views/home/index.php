@@ -108,15 +108,26 @@
 <section class="content" id="jumlahPengunjung">
     <div class="container">
         <div class="text-center">
-            <h1 class="v-heading">1234+ Pengunjung</h1>
+            <h1 class="v-heading">
+                <span>1234+</span>
+                <span>Pengunjung</span>
+            </h1>
             <p class="v-subheading">Terima kasih telah berkunjung dan turut mensejahterakan masyarakat lokal!</p>
         </div>
     </div>
 </section>
 <section class="content" id="video">
-    <div class="text-center">
-        <h1 class="content-heading">Video</h1>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/yypDW9wxtxo?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div class="row justify-content-center">
+        <div class="text-center">
+            <h1 class="content-heading">Video</h1>
+        </div>
+        <div class="col-lg-8">
+            <div class="v-container">
+                <div class="container-iframe">
+                    <iframe class="responsive-iframe" src="https://www.youtube.com/embed/yypDW9wxtxo?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 <section class="content" id="lokasi">

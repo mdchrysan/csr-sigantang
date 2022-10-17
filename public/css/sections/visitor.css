@@ -22,3 +22,9 @@
     font-size: 1.5rem;
     color: #ccdaae;
 }
+
+@media only screen and (max-width: 576px) {
+    .v-heading {
+        font-size: 2rem;
+    }
+}
