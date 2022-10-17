@@ -1,0 +1,23 @@
+.l-map > iframe {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.l-caption > h2 {
+    margin-top: 10px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.l-caption > h3 {
+    font-size: 1.5rem;
+}
+
+.l-caption > h4 {
+    margin-top: 15px;
+    font-size: 0.95rem;
+}
+
+.l-caption > hr {
+    width: 10%;
+}

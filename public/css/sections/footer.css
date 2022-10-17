@@ -19,7 +19,7 @@
     margin-bottom: 2rem;
 }
 
-hr {
+.footer > hr {
     width: 60%;
     margin-left: auto;
     margin-right: auto;

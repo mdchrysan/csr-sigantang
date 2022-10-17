@@ -120,17 +120,24 @@
     </div>
 </section>
 <section class="content" id="lokasi">
-    <div class="text-center">
-        <h1 class="content-heading">Lokasi</h1>
-    </div>
-    <div class="row">
-        <div class="col">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15857.919093178038!2d106.9163047!3d-6.4607366!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x292a150fad7dc937!2sTaman%20Wisata%20Sigantang!5e0!3m2!1sen!2sid!4v1665562008065!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div class="container">
+        <div class="text-center">
+            <h1 class="content-heading">Lokasi</h1>
         </div>
-        <div class="col">
-            <h2>1.5 km dari Stasiun Nambo!</h2>
-            <h3>KP Lebak Desa Nambo<br>Kecamatan Klapanunggal<br>Kabupaten Bogor<br>Jawa Barat<br>16710</h3>
-            <h3>Narahubung:<br>Bapak Abece<br>0812-3456-7890</h3>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="l-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15857.919093178038!2d106.9163047!3d-6.4607366!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x292a150fad7dc937!2sTaman%20Wisata%20Sigantang!5e0!3m2!1sen!2sid!4v1665562008065!5m2!1sen!2sid" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="l-caption">
+                    <h2>1.5 km dari Stasiun Nambo!</h2>
+                    <h3>KP Lebak Desa Nambo<br>Kecamatan Klapanunggal<br>Kabupaten Bogor<br>Jawa Barat<br>16710</h3>
+                    <hr>
+                    <h4>Narahubung:<br>Bapak Abece<br>0812-3456-7890</h4>
+                </div>
+            </div>
         </div>
     </div>
 </section>
