@@ -1,5 +1,5 @@
 :root {
-    --main-green: #184845;
+    --main-green: rgb(24, 72, 69);
     --sub-green: rgb(170, 255, 0);
     --main-yellow: rgb(255, 255, 0);
     --trans-black: rgba(0, 0, 0, 0.3);
