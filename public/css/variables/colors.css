@@ -1,9 +1,15 @@
 :root {
     --main-green: #184845;
     --sub-green: rgb(170, 255, 0);
+    --main-yellow: rgb(255, 255, 0);
     --trans-black: rgba(0, 0, 0, 0.3);
+    --trans-blue: rgba(0, 111, 255, 0.6);
+    --trans-red: rgba(153, 8, 2, 0.6);
+
     --main-landing-navbar: #fafafa;
+
     --black-text-shadow: 2px 6px 4px var(--trans-black);
     --green-text-shadow: 2px 6px 4px var(--sub-green);
     --black-rounded-shadow: 0 0 6px var(--trans-black);
+    
 }

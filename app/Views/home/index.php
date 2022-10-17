@@ -20,7 +20,90 @@
     </div>
 </section>
 <section class="content" id="fasilitas">
-    <h1 class="content-heading">Fasilitas</h1>
+    <div class="container">
+        <div class="text-center">
+            <h1 class="content-heading">Fasilitas</h1>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-3 col-sm-6">
+                <div class="f-item">
+                    <div class="f-logo f-odd">
+                        <i class="fa-solid fa-camera"></i>
+                    </div>
+                    <div class="f-caption">
+                        <div class="f-caption-heading">Spot Foto</div>
+                        <div class="f-caption-subheading">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="f-item">
+                    <div class="f-logo f-even">
+                        <i class="fas fa-swimmer"></i>
+                    </div>
+                    <div class="f-caption">
+                        <div class="f-caption-heading">Kolam Renang</div>
+                        <div class="f-caption-subheading">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="f-item">
+                    <div class="f-logo f-odd">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <div class="f-caption">
+                        <div class="f-caption-heading">Karaoke</div>
+                        <div class="f-caption-subheading">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="f-item">
+                    <div class="f-logo f-even">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <div class="f-caption">
+                        <div class="f-caption-heading">Gazebo</div>
+                        <div class="f-caption-subheading">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="f-item">
+                    <div class="f-logo f-odd">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="f-caption">
+                        <div class="f-caption-heading">Warung UMKM</div>
+                        <div class="f-caption-subheading">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="f-item">
+                    <div class="f-logo f-even">
+                        <i class="fas fa-parking"></i>
+                    </div>
+                    <div class="f-caption">
+                        <div class="f-caption-heading">Areal Parkir</div>
+                        <div class="f-caption-subheading">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="f-item">
+                    <div class="f-logo f-odd">
+                        <i class="fas fa-mosque"></i>
+                    </div>
+                    <div class="f-caption">
+                        <div class="f-caption-heading">Mushola</div>
+                        <div class="f-caption-subheading">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 <section class="content" id="jumlahPengunjung">
     <h1 class="content-heading">1234+ Pengunjung</h1>

@@ -4,6 +4,7 @@
 @import "./components/navbar.css";
 @import "./sections/masthead.css";
 @import "./sections/about.css";
+@import "./sections/facility.css";
 @import "./sections/footer.css";
 @import "./variables/colors.css";
 @import "./variables/typography.css";
