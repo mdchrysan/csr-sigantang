@@ -39,6 +39,7 @@ $routes->get('/', 'Home::index');
 $routes->get('/article', 'Article::index');
 $routes->get('/article/details', 'Article::details');
 $routes->get('/gallery', 'Gallery::index');
+$routes->get('/login', 'Login::index');
 
 /*
  * --------------------------------------------------------------------
