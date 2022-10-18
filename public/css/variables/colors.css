@@ -1,7 +1,12 @@
 :root {
     --main-green: rgb(24, 72, 69);
     --sub-green: rgb(170, 255, 0);
+    --light-green: rgb(212, 255, 112);
     --main-yellow: rgb(255, 255, 0);
+    --main-blue: rgb(38, 0, 255);
+    --sub-blue: rgb(62, 123, 255);
+    --main-maroon: rgb(121, 21, 37);
+    --sub-maroon: rgb(177, 34, 58);
     --trans-black: rgba(0, 0, 0, 0.3);
     --trans-blue: rgba(0, 111, 255, 0.6);
     --trans-red: rgba(153, 8, 2, 0.6);

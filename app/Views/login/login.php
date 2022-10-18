@@ -29,6 +29,10 @@
             <input type="password" class="form-control" id="password" placeholder="Masukkan kata sandi">
         </div>
         <button type="submit" class="btn btn-primary login-btn">Masuk</button>
+        <div class="mb-3 text-center">
+            <a href="<?= base_url('/'); ?>" class="back-home">
+                < Kembali ke Halaman Utama Sigantang</a>
+        </div>
     </form>
 </body>
 
