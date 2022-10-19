@@ -40,6 +40,7 @@ $routes->get('/article', 'Article::index');
 $routes->get('/article/details', 'Article::details');
 $routes->get('/gallery', 'Gallery::index');
 $routes->get('/login', 'Login::index');
+$routes->get('/admin', 'Admin_article::index');
 
 /*
  * --------------------------------------------------------------------

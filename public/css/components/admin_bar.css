@@ -1,0 +1,82 @@
+/* TOP */
+/* tb = top (nav)bar */
+
+.topnav {
+    padding-left: 0;
+    height: 56px;
+    z-index: 1039;
+    background-color: var(--main-dark-blue);
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+}
+
+.topnav > p {
+    width: 225px;
+    padding-left: 1rem;
+    margin: 0;
+    color: var(--sub-green);
+    font-family: var(--headings-font-family);
+    font-size: 1.5rem;
+}
+
+#sidebarToggle {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#sidebarToggle:hover {
+    text-shadow: none !important;
+}
+
+/* SIDE */
+
+#layoutSidenav {
+    display: flex;
+}
+
+#layoutSidenav_nav {
+    flex-basis: 225px;
+    flex-shrink: 0;
+    transition: transform 0.15s ease-in-out;
+    z-index: 1038;
+}
+
+.sidenav {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 100%;
+    background-color: var(--main-dark-blue);
+    color: #fafafa;
+}
+
+.sidenav-menu {
+    flex-grow: 1;
+}
+
+.sidenav-menu > nav {
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.sidenav-link {
+    display: flex;
+    align-items: center;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    position: relative;
+    color: var(--light-green);
+}
+
+.sidenav-link:hover, .sidenav-link:active {
+    color: #fafafa;
+    text-shadow: none !important;
+}
+
+.sidenav-link-icon {
+    margin-right: 0.5rem;
+}
+
+.sidenav-footer {
+    padding: 0.75rem;
+    flex-shrink: 0;
+    background-color: var(--sub-dark-blue);
+}

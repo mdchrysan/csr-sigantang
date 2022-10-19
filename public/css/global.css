@@ -16,6 +16,11 @@ body {
     background-color: var(--sub-green);
 }
 
+.admin-body {
+    background: #fafafa;
+    height: 100vh;
+}
+
 p {
     line-height: var(--line-height-lg);
 }
