@@ -1,42 +1,17 @@
-/* TOP */
-/* tb = top (nav)bar */
-
-.topnav {
-    padding-left: 0;
-    height: 56px;
-    z-index: 1039;
-    background-color: var(--main-dark-blue);
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
-}
-
-.topnav > p {
-    width: 225px;
-    padding-left: 1rem;
-    margin: 0;
-    color: var(--sub-green);
-    font-family: var(--headings-font-family);
-    font-size: 1.5rem;
-}
-
-#sidebarToggle {
-    color: rgba(255, 255, 255, 0.5);
-}
-
-#sidebarToggle:hover {
-    text-shadow: none !important;
-}
-
-/* SIDE */
-
 #layoutSidenav {
     display: flex;
+    position: fixed;
 }
 
 #layoutSidenav_nav {
-    flex-basis: 225px;
+    z-index: 2;
+    height: 100vh;
+    width: var(--sidenav-base-width);
+    flex-basis: var(--sidenav-base-width);
     flex-shrink: 0;
-    transition: transform 0.15s ease-in-out;
-    z-index: 1038;
+    /* transition: transform 0.15s ease-in-out; */
+    /* transform: translateX(-(var(--sidenav-base-width))); */
+    /* transform: translateX(0); */
 }
 
 .sidenav {
@@ -45,11 +20,13 @@
     flex-wrap: nowrap;
     height: 100%;
     background-color: var(--main-dark-blue);
+    /* padding-top: var(--topnav-base-height); */
     color: #fafafa;
 }
 
 .sidenav-menu {
     flex-grow: 1;
+    overflow-y: auto;
 }
 
 .sidenav-menu > nav {
@@ -79,4 +56,15 @@
     padding: 0.75rem;
     flex-shrink: 0;
     background-color: var(--sub-dark-blue);
+}
+
+@media only screen and (min-width: 992px) {
+    /* #layoutSidenav_nav {
+        transform: translateX(0);
+    } */
+
+    /* toggled */
+    #layoutSidenav_nav {
+        transform: translateX(-(var(--sidenav-base-width)));
+    }
 }

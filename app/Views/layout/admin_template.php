@@ -15,7 +15,7 @@
     <!-- <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script> -->
 </head>
 
-<body class="sidebar-nav-fixed">
+<body class="sb-nav-fixed">
     <!-- top navbar here -->
     <?= $this->include('layout/admin_top_navbar'); ?>
 

@@ -1,10 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Leckerli+One&family=Montserrat&family=Roboto+Slab&display=swap');
 
 @import "./global.css";
+
 @import "./components/navbar.css";
-@import "./components/admin_bar.css";
+@import "./components/buttons.css";
+@import "./components/form_input.css";
+@import "./components/admin_topnav.css";
+@import "./components/admin_sidenav.css";
+
 @import "./variables/colors.css";
 @import "./variables/typography.css";
+@import "./variables/spacing.css";
 
 @import "./sections/masthead.css";
 @import "./sections/about.css";
@@ -15,6 +21,7 @@
 @import "./sections/footer.css";
 
 @import "./pages/login.css";
+@import "./pages/dashboard.css";
 
 #curr-article-img {
     width: 50%;

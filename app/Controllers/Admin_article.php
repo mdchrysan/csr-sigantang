@@ -11,4 +11,12 @@ class Admin_article extends BaseController
         ];
         return view('admin/article/dashboard', $data);
     }
+
+    public function create()
+    {
+        $data = [
+            'title' => 'Tambah Artikel | Sigantang'
+        ];
+        return view('admin/article/create', $data);
+    }
 }
