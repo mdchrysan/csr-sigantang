@@ -7,10 +7,10 @@
             <h1 class="my-3">Daftar Jumlah Pengunjung</h1>
             <form action="">
                 <div class="row">
-                    <div class="col-lg-7 col-sm-6 mb-3">
+                    <div class="col-lg-4 col-sm-5 mb-3">
                         <input class="form-control form-input" type="number" id="visitorCounter">
                     </div>
-                    <div class="col-lg-5 col-sm-6">
+                    <div class="col-lg-8 col-sm-7">
                         <!-- Add Visitor Trigger -->
                         <button type="button" class="btn btn-admin" data-bs-toggle="modal" data-bs-target="#addVisitorModal">Tambah Jumlah Pengunjung</button>
                     </div>

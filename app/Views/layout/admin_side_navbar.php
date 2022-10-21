@@ -30,7 +30,7 @@
         <nav class="sidenav">
             <div class="sidenav-menu">
                 <div class="nav">
-                    <a class="nav-link sidenav-link" href="<?= base_url('/admin'); ?>">
+                    <a class="nav-link sidenav-link" href="<?= base_url('/article-list'); ?>">
                         <div class="sidenav-link-icon"><i class="far fa-newspaper"></i></div>
                         Daftar Artikel
                     </a>
