@@ -4,7 +4,7 @@
 <div class="ps-4" style="margin-left:225px;">
     <div class="row">
         <div class="col-10">
-            <h1 class="my-3">Formulir Tambah Artikel</h1>
+            <h1 class="my-3">Formulir Edit Artikel</h1>
             <form action="">
                 <div class="mb-3">
                     <label for="articleTitle" class="form-label">Judul</label>
@@ -22,15 +22,15 @@
                     <label for="articleAuthor" class="form-label">Penulis</label>
                     <input type="text" class="form-control form-input" id="articleAuthor">
                 </div>
-                <!-- Add Article Trigger -->
-                <button type="button" class="btn btn-admin" data-bs-toggle="modal" data-bs-target="#addArticleModal">Tambah</button>
-                <!-- Add Article Modal -->
-                <div class="modal fade" id="addArticleModal" tabindex="-1" aria-labelledby="addArticleModalLabel" aria-hidden="true">
+                <!-- Edit Article Trigger -->
+                <button type="button" class="btn btn-admin" data-bs-toggle="modal" data-bs-target="#editArticleModal">Edit</button>
+                <!-- Edit Article Modal -->
+                <div class="modal fade" id="editArticleModal" tabindex="-1" aria-labelledby="editArticleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-body text-center mt-3">
                                 <h3>Perhatian</h3>
-                                <p>Apakah Anda yakin ingin menambah artikel?</p>
+                                <p>Apakah Anda yakin ingin mengedit artikel?</p>
                             </div>
                             <div class="modal-footer btn-group p-0">
                                 <button type="button" class="btn btn-light" data-bs-dismiss="modal">Tidak</button>

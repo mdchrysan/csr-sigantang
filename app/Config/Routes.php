@@ -42,6 +42,7 @@ $routes->get('/gallery', 'Gallery::index');
 $routes->get('/login', 'Login::index');
 $routes->get('/admin', 'Admin_article::index');
 $routes->get('/create-article', 'Admin_article::create');
+$routes->get('/edit-article', 'Admin_article::edit');
 $routes->get('/photo-list', 'Admin_gallery::index');
 
 /*

@@ -19,4 +19,12 @@ class Admin_article extends BaseController
         ];
         return view('admin/article/create', $data);
     }
+
+    public function edit()
+    {
+        $data = [
+            'title' => 'Edit Artikel | Sigantang'
+        ];
+        return view('admin/article/edit', $data);
+    }
 }
