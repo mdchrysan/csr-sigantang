@@ -5,7 +5,7 @@
 
 #layoutSidenav_nav {
     z-index: 2;
-    height: 100vh;
+    height: calc(100vh - var(--topnav-base-height));
     width: var(--sidenav-base-width);
     flex-basis: var(--sidenav-base-width);
     flex-shrink: 0;
