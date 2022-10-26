@@ -1,6 +1,7 @@
 #layoutSidenav {
     display: flex;
     position: fixed;
+    /* padding-top: var(--topnav-base-height); */
 }
 
 #layoutSidenav_nav {

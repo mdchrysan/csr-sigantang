@@ -41,13 +41,15 @@
                                 </td>
                                 <!-- Article Details Trigger -->
                                 <td><button type="button" class="btn btn-outline-admin" data-bs-toggle="modal" data-bs-target="#articleModal">Lihat</button></td>
-                                <td class="btn-group">
-                                    <!-- Upload Trigger -->
-                                    <button type="button" class="btn btn-success"><i class="fa-solid fa-arrow-up-from-bracket" data-bs-toggle="modal" data-bs-target="#uploadModal"></i></i></button>
-                                    <!-- Edit Button -->
-                                    <a role="button" class="btn btn-warning" href="edit-article"><i class="fa-solid fa-pen-to-square"></i></a>
-                                    <!-- Delete Trigger -->
-                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa-regular fa-trash-can"></i></button>
+                                <td>
+                                    <div class="btn-group">
+                                        <!-- Upload Trigger -->
+                                        <button type="button" class="btn btn-success"><i class="fa-solid fa-arrow-up-from-bracket" data-bs-toggle="modal" data-bs-target="#uploadModal"></i></i></button>
+                                        <!-- Edit Button -->
+                                        <a role="button" class="btn btn-warning" href="edit-article"><i class="fa-solid fa-pen-to-square"></i></a>
+                                        <!-- Delete Trigger -->
+                                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa-regular fa-trash-can"></i></button>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -60,13 +62,15 @@
                                 </td>
                                 <!-- Article Details trigger -->
                                 <td><button type="button" class="btn btn-outline-admin" data-bs-toggle="modal" data-bs-target="#articleModal">Lihat</button></td>
-                                <td class="btn-group">
-                                    <!-- Upload Trigger -->
-                                    <button type="button" class="btn btn-success"><i class="fa-solid fa-arrow-up-from-bracket" data-bs-toggle="modal" data-bs-target="#uploadModal"></i></i></button>
-                                    <!-- Edit Button -->
-                                    <a role="button" class="btn btn-warning" href="edit-article"><i class="fa-solid fa-pen-to-square"></i></a>
-                                    <!-- Delete Trigger -->
-                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa-regular fa-trash-can"></i></button>
+                                <td>
+                                    <div class="btn-group">
+                                        <!-- Upload Trigger -->
+                                        <button type="button" class="btn btn-success"><i class="fa-solid fa-arrow-up-from-bracket" data-bs-toggle="modal" data-bs-target="#uploadModal"></i></i></button>
+                                        <!-- Edit Button -->
+                                        <a role="button" class="btn btn-warning" href="edit-article"><i class="fa-solid fa-pen-to-square"></i></a>
+                                        <!-- Delete Trigger -->
+                                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa-regular fa-trash-can"></i></button>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -79,13 +83,15 @@
                                 </td>
                                 <!-- Article Details trigger -->
                                 <td><button type="button" class="btn btn-outline-admin" data-bs-toggle="modal" data-bs-target="#articleModal">Lihat</button></td>
-                                <td class="btn-group">
-                                    <!-- Upload Trigger -->
-                                    <button type="button" class="btn btn-success"><i class="fa-solid fa-arrow-up-from-bracket" data-bs-toggle="modal" data-bs-target="#uploadModal"></i></i></button>
-                                    <!-- Edit Button -->
-                                    <a role="button" class="btn btn-warning" href="edit-article"><i class="fa-solid fa-pen-to-square"></i></a>
-                                    <!-- Delete Trigger -->
-                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa-regular fa-trash-can"></i></button>
+                                <td>
+                                    <div class="btn-group">
+                                        <!-- Upload Trigger -->
+                                        <button type="button" class="btn btn-success"><i class="fa-solid fa-arrow-up-from-bracket" data-bs-toggle="modal" data-bs-target="#uploadModal"></i></i></button>
+                                        <!-- Edit Button -->
+                                        <a role="button" class="btn btn-warning" href="edit-article"><i class="fa-solid fa-pen-to-square"></i></a>
+                                        <!-- Delete Trigger -->
+                                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa-regular fa-trash-can"></i></button>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -98,36 +104,62 @@
                                 </td>
                                 <!-- Article Details trigger -->
                                 <td><button type="button" class="btn btn-outline-admin" data-bs-toggle="modal" data-bs-target="#articleModal">Lihat</button></td>
-                                <td class="btn-group">
-                                    <!-- Upload Trigger -->
-                                    <button type="button" class="btn btn-success"><i class="fa-solid fa-arrow-up-from-bracket" data-bs-toggle="modal" data-bs-target="#uploadModal"></i></i></button>
-                                    <!-- Edit Button -->
-                                    <a role="button" class="btn btn-warning" href="edit-article"><i class="fa-solid fa-pen-to-square"></i></a>
-                                    <!-- Delete Trigger -->
-                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa-regular fa-trash-can"></i></button>
+                                <td>
+                                    <div class="btn-group">
+                                        <!-- Upload Trigger -->
+                                        <button type="button" class="btn btn-success"><i class="fa-solid fa-arrow-up-from-bracket" data-bs-toggle="modal" data-bs-target="#uploadModal"></i></i></button>
+                                        <!-- Edit Button -->
+                                        <a role="button" class="btn btn-warning" href="edit-article"><i class="fa-solid fa-pen-to-square"></i></a>
+                                        <!-- Delete Trigger -->
+                                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa-regular fa-trash-can"></i></button>
+                                    </div>
                                 </td>
                             </tr>
+                            <?php $i = 1 ?>
+                            <?php foreach ($article as $a) : ?>
+                                <tr>
+                                    <td scope="row"><?= $i++; ?></td>
+                                    <td><?= $a['created_at']; ?></td>
+                                    <td><?= $a['title']; ?></td>
+                                    <td><?= $a['author']; ?></td>
+                                    <td>
+                                        <div class="text-wrap"><?= $a['status']; ?></div>
+                                    </td>
+                                    <!-- Article Details Trigger -->
+                                    <td><button type="button" class="btn btn-outline-admin" data-bs-toggle="modal" data-bs-target="#articleModal<?= $a['id']; ?>">Lihat</button></td>
+                                    <!-- Article Details Modal -->
+                                    <div class="modal fade" id="articleModal<?= $a['id']; ?>" tabindex="-1" aria-labelledby="articleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <div class="modal-title" id="articleModalLabel">
+                                                        <h3><?= $a['title']; ?></h3>
+                                                        <p class="small mb-0"><?= date('d F Y', strtotime($a['created_at'])); ?></p>
+                                                    </div>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <img src="img/<?= $a['photo']; ?>" class="card-img" alt="gallery image">
+                                                    <p><?= $a['content']; ?></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Action Button -->
+                                    <td>
+                                        <div class="btn-group">
+                                            <!-- Upload Trigger -->
+                                            <button type="button" class="btn btn-success"><i class="fa-solid fa-arrow-up-from-bracket" data-bs-toggle="modal" data-bs-target="#uploadModal"></i></i></button>
+                                            <!-- Edit Button -->
+                                            <a role="button" class="btn btn-warning" href="edit-article"><i class="fa-solid fa-pen-to-square"></i></a>
+                                            <!-- Delete Trigger -->
+                                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa-regular fa-trash-can"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            <?php endforeach ?>
                         </tbody>
                     </table>
-                </div>
-            </div>
-        </div>
-        <!-- Article Details Modal -->
-        <div class="modal fade" id="articleModal" tabindex="-1" aria-labelledby="articleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <div class="modal-title" id="articleModalLabel">
-                            <h3>Judul Artikel</h3>
-                            <p class="small mb-0">1 Januari 2022</p>
-                        </div>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <img src="https://www.summitbsa.org/wp-content/uploads/2019/10/placeholder.png" class="card-img" alt="gallery image">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est dolor repellendus aspernatur ex aliquid itaque expedita, fugit neque animi harum eligendi similique earum, suscipit eum possimus cumque, corrupti porro! Laborum.</p>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe perspiciatis nobis ex voluptate amet placeat ullam, modi tempora vel, eaque culpa ab doloremque sequi eveniet distinctio autem corporis reiciendis illo.</p>
-                    </div>
                 </div>
             </div>
         </div>

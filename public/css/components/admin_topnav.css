@@ -2,6 +2,7 @@
     z-index: 3;
     padding-left: 0;
     height: var(--topnav-base-height);
+    width: 100vw;
     background-color: var(--main-dark-blue);
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
 }
