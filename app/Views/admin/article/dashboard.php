@@ -13,6 +13,11 @@
                 <div class="col-lg-5 col-sm-6 mb-3">
                     <a href="create-article" class="btn btn-admin" id="btnTambah">Tambah Artikel</a>
                 </div>
+                <?php if (session()->getFlashdata('pesan')) : ?>
+                    <div class="alert alert-success" role="alert">
+                        <?= session()->getFlashdata('pesan'); ?>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
         <div class="row">
@@ -139,7 +144,7 @@
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <img src="img/<?= $a['photo']; ?>" class="card-img" alt="gallery image">
+                                                    <img src="/img/<?= $a['photo']; ?>" class="card-img" alt="gallery image">
                                                     <p><?= $a['content']; ?></p>
                                                 </div>
                                             </div>

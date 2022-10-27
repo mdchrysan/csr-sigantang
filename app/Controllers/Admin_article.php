@@ -23,6 +23,10 @@ class Admin_article extends BaseController
             'article' => $article
         ];
 
+        // if (empty($data['article'])) {
+        //     throw new \CodeIgniter\Exceptions\PageNotFoundException('Artikel ' . $slug . ' tidak ditemukan.');
+        // }
+
         return view('admin/article/dashboard', $data);
     }
 
@@ -40,5 +44,20 @@ class Admin_article extends BaseController
             'title' => 'Edit Artikel | Sigantang'
         ];
         return view('admin/article/edit', $data);
+    }
+
+    public function save()
+    {
+        $slug = url_title($this->request->getVar('title'), '-', true);
+        $this->articleModel->save([
+            'title' => $this->request->getVar('title'),
+            'slug' => $slug,
+            'content' => $this->request->getVar('content'),
+            'author' => $this->request->getVar('author'),
+            'photo' => $this->request->getVar('photo'),
+            'status' => "dalam proses"
+        ]);
+        session()->setFlashdata('pesan', 'Data berhasil ditambahkan.');
+        return redirect()->to('/article-list');
     }
 }

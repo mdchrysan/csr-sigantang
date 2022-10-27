@@ -42,7 +42,10 @@ $routes->get('/gallery', 'Gallery::index');
 $routes->get('/login', 'Login::index');
 $routes->get('/article-list', 'Admin_article::index');
 $routes->get('/create-article', 'Admin_article::create');
+$routes->post('/save-article', 'Admin_article::save');
+// $routes->post('/admin_article/save', 'Admin_article::save');
 $routes->get('/edit-article', 'Admin_article::edit');
+$routes->get('/edit-article', 'Admin_article::save');
 $routes->get('/photo-list', 'Admin_gallery::index');
 $routes->get('/visitor-counter', 'Admin_visitor_counter::index');
 
