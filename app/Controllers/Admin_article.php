@@ -33,7 +33,8 @@ class Admin_article extends BaseController
     public function create()
     {
         $data = [
-            'title' => 'Tambah Artikel | Sigantang'
+            'title' => 'Tambah Artikel | Sigantang',
+            'validation' => \Config\Services::validation()
         ];
         return view('admin/article/create', $data);
     }
@@ -48,7 +49,40 @@ class Admin_article extends BaseController
 
     public function save()
     {
+        if (!$this->validate([
+            'title' => [
+                'rules' => 'required|is_unique[article.title]',
+                'errors' => [
+                    'required' => 'Judul tidak boleh kosong.',
+                    'is_unique' => 'Judul ini telah terdaftar.'
+                ]
+            ],
+            'content' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Konten artikel tidak boleh kosong.'
+                ]
+            ],
+            'author' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Penulis artikel tidak boleh kosong.'
+                ]
+            ],
+            'photo' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Foto artikel tidak boleh kosong.',
+                    // 'ext_in' => 'Harap melampirkan ekstensi foto yang valid.'
+                ]
+            ],
+        ])) {
+            $validation = \Config\Services::validation();
+            return redirect()->to('/create-article')->withInput()->with('validation', $validation);
+        }
+
         $slug = url_title($this->request->getVar('title'), '-', true);
+
         $this->articleModel->save([
             'title' => $this->request->getVar('title'),
             'slug' => $slug,
@@ -57,6 +91,7 @@ class Admin_article extends BaseController
             'photo' => $this->request->getVar('photo'),
             'status' => "dalam proses"
         ]);
+
         session()->setFlashdata('pesan', 'Data berhasil ditambahkan.');
         return redirect()->to('/article-list');
     }
