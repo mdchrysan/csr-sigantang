@@ -155,46 +155,51 @@
                                         <div class="btn-group">
                                             <!-- Upload Trigger -->
                                             <button type="button" class="btn btn-success"><i class="fa-solid fa-arrow-up-from-bracket" data-bs-toggle="modal" data-bs-target="#uploadModal"></i></i></button>
+                                            <!-- Upload Modal -->
+                                            <div class="modal fade" id="uploadModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="uploadModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered">
+                                                    <div class="modal-content">
+                                                        <div class="modal-body text-center mt-3">
+                                                            <h3>Perhatian</h3>
+                                                            <p>Apakah Anda yakin ingin mengunggah artikel?</p>
+                                                        </div>
+                                                        <div class="modal-footer btn-group p-0">
+                                                            <button type="button" class="btn btn-light" data-bs-dismiss="modal">Tidak</button>
+                                                            <button type="submit" class="btn btn-light">Ya</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <!-- Edit Button -->
                                             <a role="button" class="btn btn-warning" href="edit-article"><i class="fa-solid fa-pen-to-square"></i></a>
+                                            <!-- Delete Modal -->
+                                            <div class="modal fade" id="deleteModal<?= $a['id']; ?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered">
+                                                    <div class="modal-content">
+                                                        <div class="modal-body text-center mt-3">
+                                                            <h3>Perhatian</h3>
+                                                            <p>Apakah Anda yakin ingin menghapus artikel?</p>
+                                                        </div>
+                                                        <!-- spoofing -->
+                                                        <form action="/admin_article/<?= $a['id']; ?>" method="POST" class="d-inline">
+                                                            <?= csrf_field(); ?>
+                                                            <input type="hidden" name="_method" value="DELETE">
+                                                            <div class="modal-footer btn-group p-0">
+                                                                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Tidak</button>
+                                                                <button class="btn btn-light" type="submit">Ya</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <!-- Delete Trigger -->
-                                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa-regular fa-trash-can"></i></button>
+                                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal<?= $a['id']; ?>"><i class="fa-regular fa-trash-can"></i></button>
                                         </div>
                                     </td>
                                 </tr>
                             <?php endforeach ?>
                         </tbody>
                     </table>
-                </div>
-            </div>
-        </div>
-        <!-- Upload Modal -->
-        <div class="modal fade" id="uploadModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="uploadModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-body text-center mt-3">
-                        <h3>Perhatian</h3>
-                        <p>Apakah Anda yakin ingin mengunggah artikel?</p>
-                    </div>
-                    <div class="modal-footer btn-group p-0">
-                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Tidak</button>
-                        <button type="submit" class="btn btn-light">Ya</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Delete Modal -->
-        <div class="modal fade" id="deleteModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-body text-center mt-3">
-                        <h3>Perhatian</h3>
-                        <p>Apakah Anda yakin ingin menghapus artikel?</p>
-                    </div>
-                    <div class="modal-footer btn-group p-0">
-                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Tidak</button>
-                        <button type="submit" class="btn btn-light">Ya</button>
-                    </div>
                 </div>
             </div>
         </div>

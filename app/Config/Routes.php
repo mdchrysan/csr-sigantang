@@ -44,6 +44,7 @@ $routes->get('/article-list', 'Admin_article::index');
 $routes->get('/create-article', 'Admin_article::create');
 $routes->post('/save-article', 'Admin_article::save');
 // $routes->post('/admin_article/save', 'Admin_article::save');
+$routes->delete('/admin_article/(:num)', 'Admin_article::delete/$1');
 $routes->get('/edit-article', 'Admin_article::edit');
 $routes->get('/edit-article', 'Admin_article::save');
 $routes->get('/photo-list', 'Admin_gallery::index');

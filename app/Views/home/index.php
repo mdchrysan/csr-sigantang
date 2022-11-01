@@ -19,7 +19,7 @@
         </div>
     </div>
 </section>
-<section class="content" id="fasilitas">
+<section class="content" id="fasilitas" style="background-color: #defaa7;">
     <div class="container">
         <div class="text-center">
             <h1 class="content-heading">Fasilitas</h1>

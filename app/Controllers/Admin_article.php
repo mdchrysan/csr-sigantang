@@ -95,4 +95,11 @@ class Admin_article extends BaseController
         session()->setFlashdata('pesan', 'Data berhasil ditambahkan.');
         return redirect()->to('/article-list');
     }
+
+    public function delete($id)
+    {
+        $this->articleModel->delete($id);
+        session()->setFlashdata('pesan', 'Artikel berhasil dihapus.');
+        return redirect()->to('/article-list');
+    }
 }
