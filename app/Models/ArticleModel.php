@@ -12,4 +12,12 @@ class ArticleModel extends Model
 
     protected $useSoftDeletes = true;
     protected $useTimestamps = true;
+
+    public function getArticle($slug = false)
+    {
+        if ($slug == false) {
+            return $this->findAll();
+        }
+        return $this->where(['slug' => $slug])->first();
+    }
 }

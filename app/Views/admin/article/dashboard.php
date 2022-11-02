@@ -171,7 +171,7 @@
                                                 </div>
                                             </div>
                                             <!-- Edit Button -->
-                                            <a role="button" class="btn btn-warning" href="edit-article"><i class="fa-solid fa-pen-to-square"></i></a>
+                                            <a role="button" class="btn btn-warning" href="/edit-article/<?= $a['slug']; ?>"><i class="fa-solid fa-pen-to-square"></i></a>
                                             <!-- Delete Modal -->
                                             <div class="modal fade" id="deleteModal<?= $a['id']; ?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog modal-dialog-centered">
