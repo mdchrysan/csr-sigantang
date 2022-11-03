@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-10">
             <h1 class="my-3">Formulir Tambah Artikel</h1>
-            <form action="/save-article" method="POST">
+            <form action="/save-article" method="POST" enctype="multipart/form-data">
                 <!-- <form action="/admin_article/save" method="POST"> -->
                 <?= csrf_field(); ?>
                 <div class="mb-3">

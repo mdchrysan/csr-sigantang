@@ -62,17 +62,26 @@ class Admin_article extends BaseController
                 ]
             ],
             'photo' => [
-                'rules' => 'required',
+                'rules' => 'uploaded[photo]|max_size[photo,5120]|is_image[photo]|mime_in[photo,image/jpg,image/jpeg,image/png]',
                 'errors' => [
-                    'required' => 'Foto artikel tidak boleh kosong.',
-                    // 'ext_in' => 'Harap melampirkan ekstensi foto yang valid.'
+                    'uploaded' => 'Foto artikel tidak boleh kosong.',
+                    'max_size' => 'Ukuran foto terlalu besar.',
+                    'is_image'  => 'Yang Anda pilih bukan gambar.',
+                    'mime_in' => 'Harap melampirkan ekstensi foto yang valid.'
                 ]
             ],
         ])) {
-            $validation = \Config\Services::validation();
-            return redirect()->to('/create-article')->withInput()->with('validation', $validation);
+            // $validation = \Config\Services::validation();
+            // return redirect()->to('/create-article')->withInput()->with('validation', $validation);
+            return redirect()->to('/create-article')->withInput();
         }
 
+        // manage photo - move it - take the filename - insert to db
+        $photoFile = $this->request->getFile('photo');
+        $photoFile->move('img');
+        $photoName = $photoFile->getName();
+
+        // create slug from title to be saved
         $slug = url_title($this->request->getVar('title'), '-', true);
 
         // save without id = create
@@ -81,7 +90,7 @@ class Admin_article extends BaseController
             'slug' => $slug,
             'content' => $this->request->getVar('content'),
             'author' => $this->request->getVar('author'),
-            'photo' => $this->request->getVar('photo'),
+            'photo' => $photoName,
             'status' => "dalam proses"
         ]);
 
