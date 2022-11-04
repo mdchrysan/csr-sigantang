@@ -5,9 +5,10 @@
     <div class="row">
         <div class="col-10">
             <h1 class="my-3">Formulir Edit Artikel</h1>
-            <form action="/update-article/<?= $article['id']; ?>" method="POST">
+            <form action="/update-article/<?= $article['id']; ?>" method="POST" enctype="multipart/form-data">
                 <?= csrf_field(); ?>
                 <input type="hidden" name="slug" value="<?= $article['slug']; ?>">
+                <input type="hidden" name="oldPhoto" value="<?= $article['photo']; ?>">
                 <div class="mb-3">
                     <label for="articleTitle" class="form-label">Judul</label>
                     <input type="text" class="form-control form-input <?= ($validation->hasError('title')) ? 'is-invalid' : ''; ?>" id="articleTitle" name="title" value="<?= old('title', $article['title']); ?>" autofocus>
@@ -17,14 +18,21 @@
                 </div>
                 <div class="mb-3">
                     <label for="articleContent" class="form-label">Isi Artikel</label>
-                    <textarea class="form-control form-input <?= ($validation->hasError('content')) ? 'is-invalid' : ''; ?>" id="articleContent" rows="5" name="content"><?= old('content', $article['content']); ?></textarea>
-                    <div class="invalid-feedback">
-                        <?= $validation->getError('content'); ?>
+                    <div class="row">
+                        <div class="col-sm-9 mb-2">
+                            <textarea class="form-control form-input <?= ($validation->hasError('content')) ? 'is-invalid' : ''; ?>" id="articleContent" rows="5" name="content"><?= old('content', $article['content']); ?></textarea>
+                            <div class="invalid-feedback">
+                                <?= $validation->getError('content'); ?>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <img src="/img/<?= $article['photo']; ?>" alt="Article Photo" class="img-thumbnail img-preview">
+                        </div>
                     </div>
                 </div>
                 <div class="mb-3">
                     <label for="articlePhoto" class="form-label">Foto</label>
-                    <input class="form-control form-input <?= ($validation->hasError('photo')) ? 'is-invalid' : ''; ?>" type="file" id="articlePhoto" name="photo" value="<?= old('photo', $article['photo']); ?>">
+                    <input class="form-control form-input <?= ($validation->hasError('photo')) ? 'is-invalid' : ''; ?>" type="file" id="articlePhoto" name="photo" onchange="previewImage()" value="<?= old('photo', $article['photo']); ?>">
                     <div class="invalid-feedback">
                         <?= $validation->getError('photo'); ?>
                     </div>

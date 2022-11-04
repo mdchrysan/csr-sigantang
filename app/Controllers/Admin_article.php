@@ -62,9 +62,8 @@ class Admin_article extends BaseController
                 ]
             ],
             'photo' => [
-                'rules' => 'uploaded[photo]|max_size[photo,5120]|is_image[photo]|mime_in[photo,image/jpg,image/jpeg,image/png]',
+                'rules' => 'max_size[photo,5120]|is_image[photo]|mime_in[photo,image/jpg,image/jpeg,image/png]',
                 'errors' => [
-                    'uploaded' => 'Foto artikel tidak boleh kosong.',
                     'max_size' => 'Ukuran foto terlalu besar.',
                     'is_image'  => 'Yang Anda pilih bukan gambar.',
                     'mime_in' => 'Harap melampirkan ekstensi foto yang valid.'
@@ -76,10 +75,16 @@ class Admin_article extends BaseController
             return redirect()->to('/create-article')->withInput();
         }
 
-        // manage photo - move it - take the filename - insert to db
+        // manage photo
         $photoFile = $this->request->getFile('photo');
-        $photoFile->move('img');
-        $photoName = $photoFile->getName();
+        if ($photoFile->getError() == 4) {
+            $photoName = 'default.png';
+        } else {
+            // generate random filename
+            $photoName = $photoFile->getRandomName();
+            // move it
+            $photoFile->move('img', $photoName);
+        }
 
         // create slug from title to be saved
         $slug = url_title($this->request->getVar('title'), '-', true);
@@ -140,41 +145,47 @@ class Admin_article extends BaseController
                     'required' => 'Penulis artikel tidak boleh kosong.'
                 ]
             ],
-            // 'photo' => [
-            //     'rules' => 'required',
-            //     'errors' => [
-            //         'required' => 'Foto artikel tidak boleh kosong.',
-            //         // 'ext_in' => 'Harap melampirkan ekstensi foto yang valid.'
-            //     ]
-            // ],
+            'photo' => [
+                'rules' => 'max_size[photo,5120]|is_image[photo]|mime_in[photo,image/jpg,image/jpeg,image/png]',
+                'errors' => [
+                    'max_size' => 'Ukuran foto terlalu besar.',
+                    'is_image'  => 'Yang Anda pilih bukan gambar.',
+                    'mime_in' => 'Harap melampirkan ekstensi foto yang valid.'
+                ]
+            ],
         ])) {
-            $validation = \Config\Services::validation();
-            return redirect()->to('/edit-article/' . $this->request->getVar('slug'))->withInput()->with('validation', $validation);
+            return redirect()->to('/edit-article/' . $this->request->getVar('slug'))->withInput();
+        }
+
+        // manage photo
+        $photoFile = $this->request->getFile('photo');
+        // check the file
+        if ($photoFile->getError() == 4) {
+            // no new file uploaded
+            // get from hidden form
+            $photoName = $this->request->getVar('oldPhoto');;
+        } else {
+            // there's new file
+            // generate random filename
+            $photoName = $photoFile->getRandomName();
+            // move it
+            $photoFile->move('img', $photoName);
+            // delete old file
+            unlink('img/' . $this->request->getVar('oldPhoto'));
         }
 
         $slug = url_title($this->request->getVar('title'), '-', true);
 
         //save with id = edit
-        if ($this->request->getVar('photo') == '') {
-            $this->articleModel->save([
-                'id' => $id,
-                'title' => $this->request->getVar('title'),
-                'slug' => $slug,
-                'content' => $this->request->getVar('content'),
-                'author' => $this->request->getVar('author'),
-                'status' => "dalam proses"
-            ]);
-        } else {
-            $this->articleModel->save([
-                'id' => $id,
-                'title' => $this->request->getVar('title'),
-                'slug' => $slug,
-                'content' => $this->request->getVar('content'),
-                'author' => $this->request->getVar('author'),
-                'photo' => $this->request->getVar('photo'),
-                'status' => "dalam proses"
-            ]);
-        }
+        $this->articleModel->save([
+            'id' => $id,
+            'title' => $this->request->getVar('title'),
+            'slug' => $slug,
+            'content' => $this->request->getVar('content'),
+            'author' => $this->request->getVar('author'),
+            'photo' => $photoName,
+            'status' => "dalam proses"
+        ]);
 
         session()->setFlashdata('pesan', 'Data berhasil diubah.');
         return redirect()->to('/article-list');
@@ -182,6 +193,13 @@ class Admin_article extends BaseController
 
     public function delete($id)
     {
+        // find img based on id
+        $article = $this->articleModel->find($id);
+        // check img filename
+        if ($article['photo'] != 'default.png') {
+            // delete 
+            unlink('img/' . $article['photo']);
+        }
         $this->articleModel->delete($id);
         session()->setFlashdata('pesan', 'Artikel berhasil dihapus.');
         return redirect()->to('/article-list');

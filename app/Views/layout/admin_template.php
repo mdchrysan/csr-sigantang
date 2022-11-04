@@ -13,6 +13,20 @@
     <title><?= $title; ?></title>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script> -->
+    <script>
+        function previewImage() {
+            // call input & image-holder
+            const imgInput = document.querySelector('#articlePhoto');
+            const imgPreview = document.querySelector('.img-preview');
+            // get the uploaded file
+            const imgFile = new FileReader();
+            imgFile.readAsDataURL(imgInput.files[0]);
+            // change source file
+            imgFile.onload = function(event) {
+                imgPreview.src = event.target.result;
+            }
+        }
+    </script>
 </head>
 
 <body class="sb-nav-fixed">

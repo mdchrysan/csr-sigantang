@@ -17,14 +17,21 @@
                 </div>
                 <div class="mb-3">
                     <label for="articleContent" class="form-label">Isi Artikel</label>
-                    <textarea class="form-control form-input <?= ($validation->hasError('content')) ? 'is-invalid' : ''; ?>" id="articleContent" rows="5" name="content"><?= old('content'); ?></textarea>
-                    <div class="invalid-feedback">
-                        <?= $validation->getError('content'); ?>
+                    <div class="row">
+                        <div class="col-sm-9 mb-2">
+                            <textarea class="form-control form-input <?= ($validation->hasError('content')) ? 'is-invalid' : ''; ?>" id="articleContent" rows="6" name="content"><?= old('content'); ?></textarea>
+                            <div class="invalid-feedback">
+                                <?= $validation->getError('content'); ?>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <img src="/img/default.png" alt="Article Photo" class="img-thumbnail img-preview">
+                        </div>
                     </div>
                 </div>
                 <div class="mb-3">
                     <label for="articlePhoto" class="form-label">Foto</label>
-                    <input class="form-control form-input <?= ($validation->hasError('photo')) ? 'is-invalid' : ''; ?>" type="file" id="articlePhoto" name="photo" value="<?= old('photo'); ?>">
+                    <input class="form-control form-input <?= ($validation->hasError('photo')) ? 'is-invalid' : ''; ?>" type="file" id="articlePhoto" name="photo" onchange="previewImage()" value="<?= old('photo'); ?>">
                     <div class="invalid-feedback">
                         <?= $validation->getError('photo'); ?>
                     </div>
