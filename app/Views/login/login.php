@@ -18,15 +18,32 @@
         <div class="circle"></div>
         <div class="circle"></div>
     </div>
-    <form action="" class="form-login">
+    <form action="/auth" method="POST" class="form-login">
+        <?= csrf_field(); ?>
         <h1>Masuk sebagai Admin</h1>
         <div class="mb-3 form-item">
-            <label for="identityNumber" class="form-label">Nomor Identitas</label>
-            <input type="text" class="form-control" id="identityNumber" placeholder="Masukkan no. identitas">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control <?= ($validation->hasError('username')) ? 'is-invalid' : ''; ?>" id="username" name="username" placeholder="Masukkan identitas" value="<?= old('username'); ?>" autofocus>
+            <div class="invalid-feedback" style="color: red;">
+                <?= $validation->getError('username'); ?>
+            </div>
+            <?php if (session()->getFlashdata('msg-user')) : ?>
+                <div style="color: red; font-size: .875em; margin-top: .25rem;">
+                    <?= session()->getFlashdata('msg-user'); ?>
+                </div>
+            <?php endif; ?>
         </div>
         <div class="mb-3 form-item">
-            <label for="password" class="form-label">Kata Sandi</label>
-            <input type="password" class="form-control" id="password" placeholder="Masukkan kata sandi">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control <?= ($validation->hasError('password')) ? 'is-invalid' : ''; ?>" id="password" name="password" placeholder="Masukkan kata sandi">
+            <div class="invalid-feedback" style="color: red;">
+                <?= $validation->getError('password'); ?>
+            </div>
+            <?php if (session()->getFlashdata('msg-pass')) : ?>
+                <div style="color: red; font-size: .875em; margin-top: .25rem;">
+                    <?= session()->getFlashdata('msg-pass'); ?>
+                </div>
+            <?php endif; ?>
         </div>
         <button type="submit" class="btn btn-primary login-btn">Masuk</button>
         <div class="mb-3 text-center">

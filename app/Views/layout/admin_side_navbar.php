@@ -46,7 +46,7 @@
             </div>
             <div class="sidenav-footer">
                 <div class="small">Masuk sebagai:</div>
-                Manajer
+                <?= session()->get('username'); ?>
             </div>
         </nav>
     </div>

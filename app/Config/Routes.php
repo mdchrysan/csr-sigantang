@@ -40,6 +40,8 @@ $routes->get('/article', 'Article::index');
 $routes->get('/article/details', 'Article::details');
 $routes->get('/gallery', 'Gallery::index');
 $routes->get('/login', 'Login::index');
+$routes->post('/auth', 'Login::auth');
+$routes->get('/logout', 'Login::logout');
 $routes->get('/article-list', 'Admin_article::index');
 $routes->get('/create-article', 'Admin_article::create');
 $routes->post('/save-article', 'Admin_article::save');

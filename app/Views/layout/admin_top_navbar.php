@@ -32,7 +32,7 @@
                 <li>
                     <hr class="dropdown-divider" />
                 </li>
-                <li><a class="dropdown-item" href="<?= base_url('/'); ?>"><i class="fa-solid fa-right-from-bracket"></i> Keluar</a></li>
+                <li><a class="dropdown-item" href="<?= base_url('/logout'); ?>"><i class="fa-solid fa-right-from-bracket"></i> Keluar</a></li>
             </ul>
         </li>
     </ul>
