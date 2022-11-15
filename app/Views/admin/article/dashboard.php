@@ -69,23 +69,26 @@
                                     <!-- Action Button -->
                                     <td>
                                         <div class="btn-group">
-                                            <!-- Upload Trigger -->
-                                            <button type="button" class="btn btn-success"><i class="fa-solid fa-arrow-up-from-bracket" data-bs-toggle="modal" data-bs-target="#uploadModal"></i></i></button>
-                                            <!-- Upload Modal -->
-                                            <div class="modal fade" id="uploadModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="uploadModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog modal-dialog-centered">
-                                                    <div class="modal-content">
-                                                        <div class="modal-body text-center mt-3">
-                                                            <h3>Perhatian</h3>
-                                                            <p>Apakah Anda yakin ingin mengunggah artikel?</p>
-                                                        </div>
-                                                        <div class="modal-footer btn-group p-0">
-                                                            <button type="button" class="btn btn-light" data-bs-dismiss="modal">Tidak</button>
-                                                            <button type="submit" class="btn btn-light">Ya</button>
+                                            <!-- Superadmin Upload Button -->
+                                            <?php if (session()->id_role == 1) : ?>
+                                                <!-- Upload Trigger -->
+                                                <button type="button" class="btn btn-success"><i class="fa-solid fa-arrow-up-from-bracket" data-bs-toggle="modal" data-bs-target="#uploadModal"></i></i></button>
+                                                <!-- Upload Modal -->
+                                                <div class="modal fade" id="uploadModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="uploadModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered">
+                                                        <div class="modal-content">
+                                                            <div class="modal-body text-center mt-3">
+                                                                <h3>Perhatian</h3>
+                                                                <p>Apakah Anda yakin ingin mengunggah artikel?</p>
+                                                            </div>
+                                                            <div class="modal-footer btn-group p-0">
+                                                                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Tidak</button>
+                                                                <button type="submit" class="btn btn-light">Ya</button>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            <?php endif ?>
                                             <!-- Edit Button -->
                                             <a role="button" class="btn btn-warning" href="/edit-article/<?= $a['slug']; ?>"><i class="fa-solid fa-pen-to-square"></i></a>
                                             <!-- Delete Modal -->

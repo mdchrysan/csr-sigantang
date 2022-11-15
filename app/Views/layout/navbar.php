@@ -10,7 +10,12 @@
                 <li class="nav-item"><a class="nav-link" href="<?= base_url('/article'); ?>">Artikel</a></li>
                 <li class="nav-item"><a class="nav-link" href="<?= base_url('/gallery'); ?>">Galeri</a></li>
                 <li class="nav-item"><a class="nav-link" href="<?= base_url('/#lokasi'); ?>">Lokasi</a></li>
-                <li class="nav-item"><a class="nav-link" href="<?= base_url('/login'); ?>"><i class="fas fa-sign-in-alt"></i></a></li>
+                <?php if (session()->id_role == '') : ?>
+                    <li class="nav-item"><a class="nav-link" href="<?= base_url('/login'); ?>"><i class="fas fa-sign-in-alt"></i></a></li>
+                <?php endif ?>
+                <?php if (session()->id_role == 1 || 2) : ?>
+                    <li class="nav-item"><a class="nav-link" href="<?= base_url('/article-list'); ?>"><i class="fas fa-sign-in-alt"></i></a></li>
+                <?php endif ?>
             </ul>
         </div>
     </div>
