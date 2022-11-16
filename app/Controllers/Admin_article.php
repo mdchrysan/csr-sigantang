@@ -16,7 +16,6 @@ class Admin_article extends BaseController
     public function index()
     {
         $article = $this->articleModel->findAll();
-        // dd($article);
 
         $data = [
             'title' => 'Admin | Sigantang',

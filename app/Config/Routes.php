@@ -50,6 +50,7 @@ $routes->delete('/admin_article/(:num)', 'Admin_article::delete/$1');
 $routes->get('/edit-article/(:segment)', 'Admin_article::edit/$1');
 $routes->post('/update-article/(:segment)', 'Admin_article::update/$1');
 $routes->get('/photo-list', 'Admin_gallery::index');
+$routes->post('/save-photo', 'Admin_gallery::save');
 $routes->get('/visitor-counter', 'Admin_visitor_counter::index');
 
 /*

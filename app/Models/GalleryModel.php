@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 
 class GalleryModel extends Model
 {
-    protected $table      = 'gallery';
+    protected $table      = 'photos';
     protected $primaryKey = 'id';
     protected $allowedFields = ['filename', 'status'];
 

@@ -2,8 +2,6 @@
 
 namespace App\Controllers;
 
-use CodeIgniter\Database\Config;
-
 use App\Models\GalleryModel;
 
 class Admin_gallery extends BaseController
@@ -17,29 +15,50 @@ class Admin_gallery extends BaseController
 
     public function index()
     {
-        // $db = \Config\Database::connect();
-        // $gallery = $db->query("SELECT * FROM gallery");
-        // foreach ($gallery->getResultArray() as $row) {
-        //     d($row);
-        // }
         $gallery = $this->galleryModel->findAll();
-        dd($gallery);
 
         $data = [
             'title' => 'Admin | Sigantang',
+            'photo' => $gallery,
+            'validation' => \Config\Services::validation()
         ];
         return view('admin/gallery/dashboard', $data);
     }
 
     public function save()
     {
+        // photo validation
         if (!$this->validate([
-            'photo' => 'max_size[photo,5120]|is_image[photo]|mime_in[photo,image/jpg,image/jpeg,image/png]',
-            'errors' => [
-                'max_size' => 'Ukuran foto terlalu besar.',
-                'is_image'  => 'Yang Anda pilih bukan gambar.',
-                'mime_in' => 'Harap melampirkan ekstensi foto yang valid.'
+            'photo' => [
+                'rules' => 'max_size[photo,5120]|is_image[photo]|mime_in[photo,image/jpg,image/jpeg,image/png]',
+                'errors' => [
+                    'max_size'  => 'Ukuran foto terlalu besar.',
+                    'is_image'  => 'Yang Anda pilih bukan gambar.',
+                    'mime_in'   => 'Harap melampirkan ekstensi foto yang valid.',
+                ]
             ]
-        ]));
+        ])) {
+            return redirect()->to('/photo-list')->withInput();
+        }
+
+        // manage photo
+        $photoFile = $this->request->getFile('photo');
+        if ($photoFile->getError() == 4) {
+            session()->setFlashdata('required-msg', 'Harap memilih foto terlebih dahulu.');
+            return redirect()->to('/photo-list');
+        } else {
+            $photoName = $photoFile->getRandomName();
+            $photoFile->move('img', $photoName);
+        }
+        dd("debug sebelum save");
+
+        // save photo
+        $this->galleryModel->save([
+            'filename' => $photoName,
+            'status' => "dalam proses"
+        ]);
+
+        session()->setFlashdata('pesan', 'Foto berhasil ditambahkan.');
+        return redirect()->to('/photo-list');
     }
 }
