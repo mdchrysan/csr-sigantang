@@ -50,7 +50,6 @@ class Admin_gallery extends BaseController
             $photoName = $photoFile->getRandomName();
             $photoFile->move('img', $photoName);
         }
-        dd("debug sebelum save");
 
         // save photo
         $this->galleryModel->save([

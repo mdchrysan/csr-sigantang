@@ -13,6 +13,11 @@
                         <div class="invalid-feedback">
                             <?= $validation->getError('photo'); ?>
                         </div>
+                        <?php if (session()->getFlashdata('required-msg')) : ?>
+                            <div style="color: red; font-size: .875em; margin-top: .25rem;">
+                                <?= session()->getFlashdata('required-msg'); ?>
+                            </div>
+                        <?php endif; ?>
                     </div>
                     <div class="col-lg-5 col-sm-6">
                         <button type="submit" class="btn btn-admin">Tambah Foto</button>
@@ -22,11 +27,6 @@
             <?php if (session()->getFlashdata('pesan')) : ?>
                 <div class="alert alert-success" role="alert">
                     <?= session()->getFlashdata('pesan'); ?>
-                </div>
-            <?php endif; ?>
-            <?php if (session()->getFlashdata('required-msg')) : ?>
-                <div style="color: red; font-size: .875em; margin-top: .25rem;">
-                    <?= session()->getFlashdata('required-msg'); ?>
                 </div>
             <?php endif; ?>
         </div>
