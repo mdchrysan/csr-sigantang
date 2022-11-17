@@ -18,6 +18,7 @@
 @import "./sections/visitor.css";
 @import "./sections/video.css";
 @import "./sections/location.css";
+@import "./sections/feedback.css";
 @import "./sections/footer.css";
 
 @import "./pages/login.css";

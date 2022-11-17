@@ -44,8 +44,7 @@ class Admin_gallery extends BaseController
         // manage photo
         $photoFile = $this->request->getFile('photo');
         if ($photoFile->getError() == 4) {
-            session()->setFlashdata('required-msg', 'Harap memilih foto terlebih dahulu.');
-            return redirect()->to('/photo-list');
+            return redirect()->to('/photo-list')->with('required-msg', 'Harap memilih foto terlebih dahulu.');
         } else {
             $photoName = $photoFile->getRandomName();
             $photoFile->move('img', $photoName);
@@ -56,8 +55,6 @@ class Admin_gallery extends BaseController
             'filename' => $photoName,
             'status' => "dalam proses"
         ]);
-
-        session()->setFlashdata('pesan', 'Foto berhasil ditambahkan.');
-        return redirect()->to('/photo-list');
+        return redirect()->to('/photo-list')->with('pesan', 'Foto berhasil ditambahkan.');
     }
 }

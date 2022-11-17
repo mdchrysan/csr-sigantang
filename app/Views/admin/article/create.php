@@ -43,24 +43,7 @@
                         <?= $validation->getError('author'); ?>
                     </div>
                 </div>
-                <!-- Add Article Trigger -->
                 <button type="submit" class="btn btn-admin">Tambah</button>
-                <!-- <button type="button" class="btn btn-admin" data-bs-toggle="modal" data-bs-target="#addArticleModal">Tambah</button> -->
-                <!-- Add Article Modal -->
-                <!-- <div class="modal fade" id="addArticleModal" tabindex="-1" aria-labelledby="addArticleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-body text-center mt-3">
-                                <h3>Perhatian</h3>
-                                <p>Apakah Anda yakin ingin menambah artikel?</p>
-                            </div>
-                            <div class="modal-footer btn-group p-0">
-                                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Tidak</button>
-                                <button type="submit" class="btn btn-light">Ya</button>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
             </form>
         </div>
     </div>

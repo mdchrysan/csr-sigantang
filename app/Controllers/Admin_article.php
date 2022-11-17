@@ -90,16 +90,15 @@ class Admin_article extends BaseController
 
         // save without id = create
         $this->articleModel->save([
-            'title' => $this->request->getVar('title'),
-            'slug' => $slug,
-            'content' => $this->request->getVar('content'),
-            'author' => $this->request->getVar('author'),
-            'photo' => $photoName,
-            'status' => "dalam proses"
+            'title'     => $this->request->getVar('title'),
+            'slug'      => $slug,
+            'content'   => $this->request->getVar('content'),
+            'author'    => $this->request->getVar('author'),
+            'photo'     => $photoName,
+            'status'    => "dalam proses"
         ]);
 
-        session()->setFlashdata('pesan', 'Data berhasil ditambahkan.');
-        return redirect()->to('/article-list');
+        return redirect()->to('/article-list')->with('pesan', 'Data berhasil ditambahkan.');
     }
 
     public function edit($slug)
@@ -153,7 +152,7 @@ class Admin_article extends BaseController
                 ]
             ],
         ])) {
-            return redirect()->to('/edit-article/' . $this->request->getVar('slug'))->withInput();
+            return redirect()->to('/edit-article' . $this->request->getVar('slug'))->withInput();
         }
 
         // manage photo
@@ -186,8 +185,7 @@ class Admin_article extends BaseController
             'status' => "dalam proses"
         ]);
 
-        session()->setFlashdata('pesan', 'Data berhasil diubah.');
-        return redirect()->to('/article-list');
+        return redirect()->to('/article-list')->with('pesan', 'Data berhasil diubah.');
     }
 
     public function delete($id)
@@ -200,7 +198,6 @@ class Admin_article extends BaseController
             unlink('img/' . $article['photo']);
         }
         $this->articleModel->delete($id);
-        session()->setFlashdata('pesan', 'Artikel berhasil dihapus.');
-        return redirect()->to('/article-list');
+        return redirect()->to('/article-list')->with('pesan', 'Artikel berhasil dihapus.');
     }
 }

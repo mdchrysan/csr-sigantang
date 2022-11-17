@@ -152,4 +152,51 @@
         </div>
     </div>
 </section>
+<section class="content" id="kesanpesan">
+    <div class="container">
+        <div class="text-center">
+            <h1 class="content-heading">Kesan & Pesan</h1>
+        </div>
+    </div>
+    <form action="/submit-feedback" method="POST">
+        <?= csrf_field(); ?>
+        <div class="mb-3">
+            <label for="feedback-name" class="form-label">Nama</label>
+            <input type="text" class="form-control form-input <?= ($validation->hasError('name')) ? 'is-invalid' : ''; ?>" id="feedback-name" name="name" value="<?= old('name'); ?>">
+            <div class="invalid-feedback">
+                <?= $validation->getError('name'); ?>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="feedback-address" class="form-label">Asal Daerah</label>
+            <input type="text" class="form-control form-input <?= ($validation->hasError('address')) ? 'is-invalid' : ''; ?>" id="feedback-address" name="address" value="<?= old('address'); ?>">
+            <div class="invalid-feedback">
+                <?= $validation->getError('address'); ?>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="feedback-impression" class="form-label">Kesan</label>
+            <textarea type="text" class="form-control form-input <?= ($validation->hasError('impression')) ? 'is-invalid' : ''; ?>" id="feedback-impression" rows="4" name="impression"><?= old('impression'); ?></textarea>
+            <div class="invalid-feedback">
+                <?= $validation->getError('impression'); ?>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="feedback-message" class="form-label">Pesan</label>
+            <textarea type="text" class="form-control form-input <?= ($validation->hasError('message')) ? 'is-invalid' : ''; ?>" id="feedback-message" rows="4" name="message"><?= old('message'); ?></textarea>
+            <div class="invalid-feedback">
+                <?= $validation->getError('message'); ?>
+            </div>
+        </div>
+        <div class="text-center">
+            <p class="fst-italic">*Informasi yang Anda kirimkan tidak akan dipublikasikan dan hanya dipakai oleh admin website Sigantang untuk pengembangan desa wisata.</p>
+            <button type="submit" class="btn btn-success">Kirim</button>
+            <?php if (session()->getFlashdata('msg-feedback')) : ?>
+                <div style="color: red; font-size: .875em; margin-top: .25rem;">
+                    <?= session()->getFlashdata('msg-feedback'); ?>
+                </div>
+            <?php endif; ?>
+        </div>
+    </form>
+</section>
 <?= $this->endSection(); ?>
