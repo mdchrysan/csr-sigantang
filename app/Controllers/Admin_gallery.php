@@ -16,11 +16,19 @@ class Admin_gallery extends BaseController
     public function index()
     {
         $gallery = $this->galleryModel->findAll();
+        // perPage parameter linked to number increment on views
+        $gallery = $this->galleryModel->paginate(6, 'photos');
+        $pager = $this->galleryModel->pager;
+
+        // set default page if not stated
+        $currentPage = $this->request->getVar('page_photos') ? $this->request->getVar('page_photos') : 1;
 
         $data = [
-            'title' => 'Admin | Sigantang',
-            'photo' => $gallery,
-            'validation' => \Config\Services::validation()
+            'title'         => 'Admin | Sigantang',
+            'photo'         => $gallery,
+            'pager'         => $pager,
+            'currentPage'   => $currentPage,
+            'validation'    => \Config\Services::validation()
         ];
         return view('admin/gallery/dashboard', $data);
     }

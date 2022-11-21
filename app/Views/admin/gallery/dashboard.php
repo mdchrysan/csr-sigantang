@@ -46,11 +46,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php $i = 1 ?>
+                        <!-- multiplier based on perPage paginate on controller -->
+                        <?php $i = 1 + (6 * ($currentPage - 1)); ?>
                         <?php foreach ($photo as $p) : ?>
                             <tr>
                                 <td scope="row"><?= $i++; ?></td>
-                                <td><?= $p['created_at']; ?></td>
+                                <td><?= date('d-M-y H:i:s', strtotime($p['created_at'])); ?></td>
                                 <td><?= $p['filename']; ?></td>
                                 <td>
                                     <div class="text-wrap"><?= $p['status']; ?></div>
@@ -120,6 +121,7 @@
                         <?php endforeach ?>
                     </tbody>
                 </table>
+                <?= $pager->links('photos', 'admin_pagination') ?>
             </div>
         </div>
     </div>

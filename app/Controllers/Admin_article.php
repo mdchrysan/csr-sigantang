@@ -15,11 +15,18 @@ class Admin_article extends BaseController
 
     public function index()
     {
-        $article = $this->articleModel->findAll();
+        // perPage parameter linked to number increment on views
+        $article = $this->articleModel->paginate(6, 'article');
+        $pager = $this->articleModel->pager;
+
+        // set default page if not stated
+        $currentPage = $this->request->getVar('page_article') ? $this->request->getVar('page_article') : 1;
 
         $data = [
-            'title' => 'Admin | Sigantang',
-            'article' => $article
+            'title'         => 'Admin | Sigantang',
+            'article'       => $article,
+            'pager'         => $pager,
+            'currentPage'   => $currentPage
         ];
 
         // if (empty($data['article'])) {

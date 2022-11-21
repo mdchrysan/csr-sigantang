@@ -36,11 +36,12 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $i = 1 ?>
+                            <!-- multiplier based on perPage paginate on controller -->
+                            <?php $i = 1 + (6 * ($currentPage - 1)); ?>
                             <?php foreach ($article as $a) : ?>
                                 <tr>
                                     <td scope="row"><?= $i++; ?></td>
-                                    <td><?= $a['created_at']; ?></td>
+                                    <td><?= date('d-M-y H:i:s', strtotime($a['created_at'])); ?></td>
                                     <td><?= $a['title']; ?></td>
                                     <td><?= $a['author']; ?></td>
                                     <td>
@@ -119,6 +120,7 @@
                             <?php endforeach ?>
                         </tbody>
                     </table>
+                    <?= $pager->links('article', 'admin_pagination') ?>
                 </div>
             </div>
         </div>
