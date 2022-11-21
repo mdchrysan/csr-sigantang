@@ -101,10 +101,15 @@
                                                     <h3>Perhatian</h3>
                                                     <p>Apakah Anda yakin ingin menghapus foto?</p>
                                                 </div>
-                                                <div class="modal-footer btn-group p-0">
-                                                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Tidak</button>
-                                                    <button type="submit" class="btn btn-light">Ya</button>
-                                                </div>
+                                                <!-- spoofing -->
+                                                <form action="/admin_gallery/<?= $p['id']; ?>" method="POST" class="d-inline">
+                                                    <?= csrf_field(); ?>
+                                                    <input type="hidden" name="_method" value="DELETE">
+                                                    <div class="modal-footer btn-group p-0">
+                                                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Tidak</button>
+                                                        <button type="submit" class="btn btn-light">Ya</button>
+                                                    </div>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>

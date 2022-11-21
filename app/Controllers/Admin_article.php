@@ -169,7 +169,10 @@ class Admin_article extends BaseController
             // move it
             $photoFile->move('img', $photoName);
             // delete old file
-            unlink('img/' . $this->request->getVar('oldPhoto'));
+            $oldPhoto = $this->request->getVar('oldPhoto');
+            if ($oldPhoto != 'default.png') {
+                unlink('img/' . $oldPhoto['photo']);
+            }
         }
 
         $slug = url_title($this->request->getVar('title'), '-', true);

@@ -57,4 +57,12 @@ class Admin_gallery extends BaseController
         ]);
         return redirect()->to('/photo-list')->with('pesan', 'Foto berhasil ditambahkan.');
     }
+
+    public function delete($id)
+    {
+        $photo = $this->galleryModel->find($id);
+        unlink('img/' . $photo['filename']);
+        $this->galleryModel->delete($id);
+        return redirect()->to('/photo-list')->with('pesan', 'Foto berhasil dihapus.');
+    }
 }
