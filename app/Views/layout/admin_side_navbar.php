@@ -38,9 +38,9 @@
                         <div class="sidenav-link-icon"><i class="far fa-images"></i></div>
                         Daftar Foto
                     </a>
-                    <a class="nav-link sidenav-link" href="<?= base_url('/visitor-counter'); ?>">
+                    <a class="nav-link sidenav-link" href="<?= base_url('/feedback'); ?>">
                         <div class="sidenav-link-icon"><i class="fas fa-users"></i></div>
-                        Jumlah Pengunjung
+                        Pesan & Kesan Pengunjung
                     </a>
                 </div>
             </div>

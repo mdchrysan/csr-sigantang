@@ -53,7 +53,7 @@ $routes->post('/update-article/(:segment)', 'Admin_article::update/$1');
 $routes->get('/photo-list', 'Admin_gallery::index');
 $routes->post('/save-photo', 'Admin_gallery::save');
 $routes->delete('/admin_gallery/(:num)', 'Admin_gallery::delete/$1');
-$routes->get('/visitor-counter', 'Admin_visitor_counter::index');
+$routes->get('/feedback', 'Admin_feedback::index');
 
 /*
  * --------------------------------------------------------------------
