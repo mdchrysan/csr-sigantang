@@ -15,9 +15,8 @@ class Admin_gallery extends BaseController
 
     public function index()
     {
-        $gallery = $this->galleryModel->findAll();
         // perPage parameter linked to number increment on views
-        $gallery = $this->galleryModel->paginate(6, 'photos');
+        $gallery = $this->galleryModel->orderBy('created_at', 'DESC')->paginate(6, 'photos');
         $pager = $this->galleryModel->pager;
 
         // set default page if not stated

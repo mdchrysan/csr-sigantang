@@ -16,7 +16,7 @@ class Admin_article extends BaseController
     public function index()
     {
         // perPage parameter linked to number increment on views
-        $article = $this->articleModel->paginate(6, 'article');
+        $article = $this->articleModel->orderBy('created_at', 'DESC')->paginate(6, 'article');
         $pager = $this->articleModel->pager;
 
         // set default page if not stated
