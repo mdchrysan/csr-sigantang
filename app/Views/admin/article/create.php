@@ -19,7 +19,7 @@
                     <label for="articleContent" class="form-label">Isi Artikel</label>
                     <div class="row">
                         <div class="col-sm-9 mb-2">
-                            <textarea class="form-control form-input <?= ($validation->hasError('content')) ? 'is-invalid' : ''; ?>" id="articleContent" rows="6" name="content"><?= old('content'); ?></textarea>
+                            <textarea class="form-control form-input <?= ($validation->hasError('content')) ? 'is-invalid' : ''; ?>" id="articleContent" rows="5" name="content"><?= old('content'); ?></textarea>
                             <div class="invalid-feedback">
                                 <?= $validation->getError('content'); ?>
                             </div>
@@ -35,6 +35,20 @@
                     <div class="invalid-feedback">
                         <?= $validation->getError('photo'); ?>
                     </div>
+                </div>
+                <div class="mb-3">
+                    <label for="articleCategory" class="form-label">Kategori</label>
+                    <select class="form-select" aria-label="Select article category" id="articleCategory" name="category">
+                        <option disabled selected>Pilih kategori:</option>
+                        <option value="Aktivitas" <?= old('category') == 'Aktivitas' ? 'selected' : ''; ?>>Aktivitas</option>
+                        <option value="Kunjungan" <?= old('category') == 'Kunjungan' ? 'selected' : ''; ?>>Kunjungan</option>
+                        <option value="Penghargaan" <?= old('category') == 'Penghargaan' ? 'selected' : ''; ?>>Penghargaan</option>
+                    </select>
+                    <?php if (session()->getFlashdata('selected-msg')) : ?>
+                        <div style="color: red; font-size: .875em; margin-top: .25rem;">
+                            <?= session()->getFlashdata('selected-msg'); ?>
+                        </div>
+                    <?php endif; ?>
                 </div>
                 <div class="mb-3">
                     <label for="articleAuthor" class="form-label">Penulis</label>

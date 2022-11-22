@@ -38,6 +38,20 @@
                     </div>
                 </div>
                 <div class="mb-3">
+                    <label for="articleCategory" class="form-label">Kategori</label>
+                    <select class="form-select" aria-label="Select article category" id="articleCategory" name="category">
+                        <option disabled selected>Pilih kategori:</option>
+                        <option value="Aktivitas" <?= old('category', $article['category']) == 'Aktivitas' ? 'selected' : ''; ?>>Aktivitas</option>
+                        <option value="Kunjungan" <?= old('category', $article['category']) == 'Kunjungan' ? 'selected' : ''; ?>>Kunjungan</option>
+                        <option value="Penghargaan" <?= old('category', $article['category']) == 'Penghargaan' ? 'selected' : ''; ?>>Penghargaan</option>
+                    </select>
+                    <?php if (session()->getFlashdata('selected-msg')) : ?>
+                        <div style="color: red; font-size: .875em; margin-top: .25rem;">
+                            <?= session()->getFlashdata('selected-msg'); ?>
+                        </div>
+                    <?php endif; ?>
+                </div>
+                <div class="mb-3">
                     <label for="articleAuthor" class="form-label">Penulis</label>
                     <input type="text" class="form-control form-input <?= ($validation->hasError('author')) ? 'is-invalid' : ''; ?>" id="articleAuthor" name="author" value="<?= old('author', $article['author']); ?>">
                     <div class="invalid-feedback">

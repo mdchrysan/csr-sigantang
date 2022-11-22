@@ -41,7 +41,7 @@
                             <?php foreach ($article as $a) : ?>
                                 <tr>
                                     <td scope="row"><?= $i++; ?></td>
-                                    <td><?= date('d-M-y H:i:s', strtotime($a['created_at'])); ?></td>
+                                    <td><?= date('d-M-y H:i:s', strtotime($a['updated_at'])); ?></td>
                                     <td><?= $a['title']; ?></td>
                                     <td><?= $a['author']; ?></td>
                                     <td>
@@ -63,6 +63,7 @@
                                                 <div class="modal-body">
                                                     <img src="/img/<?= $a['photo']; ?>" class="card-img" alt="gallery image">
                                                     <p><?= $a['content']; ?></p>
+                                                    <p>Kategori: <?= $a['category']; ?></p>
                                                 </div>
                                             </div>
                                         </div>

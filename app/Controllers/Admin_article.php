@@ -92,6 +92,12 @@ class Admin_article extends BaseController
             $photoFile->move('img', $photoName);
         }
 
+        // check selected category
+        $selectedCategory = $this->request->getVar('category');
+        if (is_null($selectedCategory)) {
+            return redirect()->to('/create-article')->withInput()->with('selected-msg', 'Harap memilih kategori terlebih dahulu.');
+        }
+
         // create slug from title to be saved
         $slug = url_title($this->request->getVar('title'), '-', true);
 
@@ -101,6 +107,7 @@ class Admin_article extends BaseController
             'slug'      => $slug,
             'content'   => $this->request->getVar('content'),
             'author'    => $this->request->getVar('author'),
+            'category'  => $selectedCategory,
             'photo'     => $photoName,
             'status'    => "dalam proses"
         ]);
@@ -186,13 +193,14 @@ class Admin_article extends BaseController
 
         //save with id = edit
         $this->articleModel->save([
-            'id' => $id,
-            'title' => $this->request->getVar('title'),
-            'slug' => $slug,
-            'content' => $this->request->getVar('content'),
-            'author' => $this->request->getVar('author'),
-            'photo' => $photoName,
-            'status' => "dalam proses"
+            'id'        => $id,
+            'title'     => $this->request->getVar('title'),
+            'slug'      => $slug,
+            'content'   => $this->request->getVar('content'),
+            'author'    => $this->request->getVar('author'),
+            'category'  => $this->request->getVar('category'),
+            'photo'     => $photoName,
+            'status'    => "dalam proses"
         ]);
 
         return redirect()->to('/article-list')->with('pesan', 'Data berhasil diubah.');
