@@ -39,7 +39,7 @@ class Filters extends BaseConfig
             // 'csrf',
             // 'invalidchars',
             'filteradmin' => [
-                'except' => ['login/*', 'login', 'auth', '/', 'submit-feedback', 'article', 'article/*', 'gallery']
+                'except' => ['login/*', 'login', 'auth', '/', 'submit-feedback', 'profile', 'article', 'article/*', 'gallery']
             ]
         ],
         'after' => [

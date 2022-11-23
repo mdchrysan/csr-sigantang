@@ -23,6 +23,7 @@
 
 @import "./pages/login.css";
 @import "./pages/dashboard.css";
+@import "./pages/profile.css";
 
 #curr-article-img {
     width: 50%;
