@@ -4,7 +4,7 @@
 <header class="masthead" id="masthead-beranda">
     <div class="masthead-heading">Sigantang</div>
     <div class="masthead-subheading">Desa Wisata Bernuansa Alam dengan Kearifan Lokal</div>
-    <a class="btn btn-primary btn-xl" href="#tentang">Jelajahi</a>
+    <a class="btn" href="#tentang">Jelajahi</a>
 </header>
 <section class="content" id="tentang">
     <div class="row">
@@ -105,17 +105,6 @@
         </div>
     </div>
 </section>
-<section class="content" id="jumlahPengunjung">
-    <div class="container">
-        <div class="text-center">
-            <h1 class="v-heading">
-                <span>1234+</span>
-                <span>Pengunjung</span>
-            </h1>
-            <p class="v-subheading">Terima kasih telah berkunjung dan turut mensejahterakan masyarakat lokal!</p>
-        </div>
-    </div>
-</section>
 <section class="content" id="video">
     <div class="row justify-content-center">
         <div class="text-center">
@@ -174,18 +163,20 @@
                 <?= $validation->getError('address'); ?>
             </div>
         </div>
-        <div class="mb-3">
-            <label for="feedback-impression" class="form-label">Kesan</label>
-            <textarea type="text" class="form-control form-input <?= ($validation->hasError('impression')) ? 'is-invalid' : ''; ?>" id="feedback-impression" rows="4" name="impression"><?= old('impression'); ?></textarea>
-            <div class="invalid-feedback">
-                <?= $validation->getError('impression'); ?>
+        <div class="row">
+            <div class="mb-3 col-lg-6 col-md-12">
+                <label for="feedback-impression" class="form-label">Kesan</label>
+                <textarea type="text" class="form-control form-input <?= ($validation->hasError('impression')) ? 'is-invalid' : ''; ?>" id="feedback-impression" rows="6" name="impression"><?= old('impression'); ?></textarea>
+                <div class="invalid-feedback">
+                    <?= $validation->getError('impression'); ?>
+                </div>
             </div>
-        </div>
-        <div class="mb-3">
-            <label for="feedback-message" class="form-label">Pesan</label>
-            <textarea type="text" class="form-control form-input <?= ($validation->hasError('message')) ? 'is-invalid' : ''; ?>" id="feedback-message" rows="4" name="message"><?= old('message'); ?></textarea>
-            <div class="invalid-feedback">
-                <?= $validation->getError('message'); ?>
+            <div class="mb-3 col-lg-6 col-md-12">
+                <label for="feedback-message" class="form-label">Pesan</label>
+                <textarea type="text" class="form-control form-input <?= ($validation->hasError('message')) ? 'is-invalid' : ''; ?>" id="feedback-message" rows="6" name="message"><?= old('message'); ?></textarea>
+                <div class="invalid-feedback">
+                    <?= $validation->getError('message'); ?>
+                </div>
             </div>
         </div>
         <div class="text-center">

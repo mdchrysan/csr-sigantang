@@ -5,16 +5,34 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: scroll;
-}
+}          
 
-.img-sk {       
+#img-sk {       
     display: block;
     margin-left: auto;
     margin-right: auto;
-    max-width: 35%;
+    width: 35%;
     height: auto;
+    box-shadow: 5px 5px #212429, 10px 10px #fff, 15px 15px #212429;
 }
 
 #struktur-organisasi{
     background-color: white;
+}
+
+#img-struktur {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    height: auto;
+}
+
+@media only screen and (max-width: 800px) {
+    #img-sk {
+        width: 90%;
+    }
+    #img-struktur {
+        width: 100%;
+    }
 }

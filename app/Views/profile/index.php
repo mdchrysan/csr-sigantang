@@ -27,11 +27,9 @@
     <div class="text-center">
         <h1 class="content-heading">Surat Keputusan</h1>
     </div>
-    <div class="row">
-        <!-- <div class="col-md-6"> -->
+    <div class="sk-container">
         <!-- <embed src="\img\Scan-SK.pdf" type="application/pdf" width="450" height="600"> -->
-        <img src="\img\SK-hal-1.jpg" alt="Foto SK" class="img-sk">
-        <!-- </div> -->
+        <img src="\img\SK-hal-1.jpg" alt="Foto SK" id="img-sk">
     </div>
 </section>
 <section class="content" id="struktur-organisasi">
@@ -39,7 +37,7 @@
         <h1 class="content-heading">Struktur Organisasi</h1>
     </div>
     <div class="text-center">
-        <img src="\img\struktur-org-sgt.jpg" alt="Struktur Organisasi">
+        <img src="\img\struktur-org-sgt.jpg" alt="Struktur Organisasi" id="img-struktur">
     </div>
 </section>
 <?= $this->endSection(); ?>
