@@ -53,13 +53,14 @@ $routes->get('/logout', 'Login::logout');
 $routes->get('/article-list', 'Admin_article::index');
 $routes->get('/create-article', 'Admin_article::create');
 $routes->post('/save-article', 'Admin_article::save');
+$routes->post('/upload-article/(:num)', 'Admin_article::upload/$1');
 // $routes->post('/admin_article/save', 'Admin_article::save');
-$routes->delete('/admin_article/(:num)', 'Admin_article::delete/$1');
+$routes->delete('/delete-article/(:num)', 'Admin_article::delete/$1');
 $routes->get('/edit-article/(:segment)', 'Admin_article::edit/$1');
 $routes->post('/update-article/(:segment)', 'Admin_article::update/$1');
 $routes->get('/photo-list', 'Admin_gallery::index');
 $routes->post('/save-photo', 'Admin_gallery::save');
-$routes->delete('/admin_gallery/(:num)', 'Admin_gallery::delete/$1');
+$routes->delete('/delete-photo/(:num)', 'Admin_gallery::delete/$1');
 $routes->get('/feedback', 'Admin_feedback::index');
 
 /*

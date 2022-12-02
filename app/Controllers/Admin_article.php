@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\ArticleModel;
+use App\Models\PublishedArticleModel;
 
 class Admin_article extends BaseController
 {
@@ -11,12 +12,13 @@ class Admin_article extends BaseController
     public function __construct()
     {
         $this->articleModel = new ArticleModel();
+        $this->publishedModel = new PublishedArticleModel();
     }
 
     public function index()
     {
         // perPage parameter linked to number increment on views
-        $article = $this->articleModel->orderBy('created_at', 'DESC')->paginate(6, 'article');
+        $article = $this->articleModel->orderBy('created_at', 'DESC')->paginate(5, 'article');
         $pager = $this->articleModel->pager;
 
         // set default page if not stated
@@ -113,6 +115,30 @@ class Admin_article extends BaseController
         ]);
 
         return redirect()->to('/article-list')->with('pesan', 'Data berhasil ditambahkan.');
+    }
+
+    public function upload($id)
+    {
+        $article = $this->articleModel->find($id);
+        try {
+            $this->publishedModel->save([
+                'article_id' => $article['id'],
+            ]);
+        } catch (\Exception $e) {
+            return redirect()->to('/article-list')->with('pesan', 'Artikel telah dipublikasi sebelumnya.');
+        }
+
+        // change article's status ("Dalam proses" -> "Terpublikasi")
+        // save with id = edit
+        $this->articleModel->save([
+            'id' => $id,
+            'status' => "Terpublikasi",
+        ]);
+
+        // disable button edit on admin article list
+        // ...
+
+        return redirect()->to('/article-list')->with('pesan', 'Artikel berhasil dipublikasi.');
     }
 
     public function edit($slug)

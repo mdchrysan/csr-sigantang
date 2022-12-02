@@ -47,7 +47,7 @@
                     </thead>
                     <tbody>
                         <!-- multiplier based on perPage paginate on controller -->
-                        <?php $i = 1 + (6 * ($currentPage - 1)); ?>
+                        <?php $i = 1 + (5 * ($currentPage - 1)); ?>
                         <?php foreach ($photo as $p) : ?>
                             <tr>
                                 <td scope="row"><?= $i++; ?></td>
@@ -103,7 +103,7 @@
                                                     <p>Apakah Anda yakin ingin menghapus foto?</p>
                                                 </div>
                                                 <!-- spoofing -->
-                                                <form action="/admin_gallery/<?= $p['id']; ?>" method="POST" class="d-inline">
+                                                <form action="/delete-photo/<?= $p['id']; ?>" method="POST" class="d-inline">
                                                     <?= csrf_field(); ?>
                                                     <input type="hidden" name="_method" value="DELETE">
                                                     <div class="modal-footer btn-group p-0">

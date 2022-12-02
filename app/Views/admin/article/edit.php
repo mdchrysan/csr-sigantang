@@ -42,7 +42,7 @@
                     <select class="form-select" aria-label="Select article category" id="articleCategory" name="category">
                         <option disabled selected>Pilih kategori:</option>
                         <option value="Aktivitas" <?= old('category', $article['category']) == 'Aktivitas' ? 'selected' : ''; ?>>Aktivitas</option>
-                        <option value="Kunjungan" <?= old('category', $article['category']) == 'Kunjungan' ? 'selected' : ''; ?>>Kunjungan</option>
+                        <option value="Fakta Menarik" <?= old('category', $article['category']) == 'Fakta Menarik' ? 'selected' : ''; ?>>Fakta Menarik</option>
                         <option value="Penghargaan" <?= old('category', $article['category']) == 'Penghargaan' ? 'selected' : ''; ?>>Penghargaan</option>
                     </select>
                     <?php if (session()->getFlashdata('selected-msg')) : ?>

@@ -10,7 +10,7 @@ class ArticleModel extends Model
     protected $primaryKey = 'id';
     protected $allowedFields = ['title', 'slug', 'content', 'author', 'category', 'photo', 'status'];
 
-    protected $useSoftDeletes = true;
+    // protected $useSoftDeletes = true;
     protected $useTimestamps = true;
 
     public function getArticle($slug = false)

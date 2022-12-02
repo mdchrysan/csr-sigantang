@@ -37,7 +37,7 @@
                         </thead>
                         <tbody>
                             <!-- multiplier based on perPage paginate on controller -->
-                            <?php $i = 1 + (6 * ($currentPage - 1)); ?>
+                            <?php $i = 1 + (5 * ($currentPage - 1)); ?>
                             <?php foreach ($article as $a) : ?>
                                 <tr>
                                     <td scope="row"><?= $i++; ?></td>
@@ -74,19 +74,22 @@
                                             <!-- Superadmin Upload Button -->
                                             <?php if (session()->id_role == 1) : ?>
                                                 <!-- Upload Trigger -->
-                                                <button type="button" class="btn btn-success"><i class="fa-solid fa-arrow-up-from-bracket" data-bs-toggle="modal" data-bs-target="#uploadModal"></i></i></button>
+                                                <button type="button" class="btn btn-success"><i class="fa-solid fa-arrow-up-from-bracket" data-bs-toggle="modal" data-bs-target="#uploadModal<?= $a['id']; ?>"></i></i></button>
                                                 <!-- Upload Modal -->
-                                                <div class="modal fade" id="uploadModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="uploadModalLabel" aria-hidden="true">
+                                                <div class="modal fade" id="uploadModal<?= $a['id']; ?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="uploadModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog modal-dialog-centered">
                                                         <div class="modal-content">
                                                             <div class="modal-body text-center mt-3">
                                                                 <h3>Perhatian</h3>
                                                                 <p>Apakah Anda yakin ingin mengunggah artikel?</p>
                                                             </div>
-                                                            <div class="modal-footer btn-group p-0">
-                                                                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Tidak</button>
-                                                                <button type="submit" class="btn btn-light">Ya</button>
-                                                            </div>
+                                                            <form action="/upload-article/<?= $a['id']; ?>" method="POST">
+                                                                <?= csrf_field(); ?>
+                                                                <div class="modal-footer btn-group p-0">
+                                                                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Tidak</button>
+                                                                    <button type="submit" class="btn btn-light">Ya</button>
+                                                                </div>
+                                                            </form>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -102,7 +105,7 @@
                                                             <p>Apakah Anda yakin ingin menghapus artikel?</p>
                                                         </div>
                                                         <!-- spoofing -->
-                                                        <form action="/admin_article/<?= $a['id']; ?>" method="POST" class="d-inline">
+                                                        <form action="/delete-article/<?= $a['id']; ?>" method="POST" class="d-inline">
                                                             <?= csrf_field(); ?>
                                                             <input type="hidden" name="_method" value="DELETE">
                                                             <div class="modal-footer btn-group p-0">
