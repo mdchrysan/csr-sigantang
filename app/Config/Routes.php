@@ -41,7 +41,7 @@ $routes->get('/', 'Home::index');
 $routes->post('/submit-feedback', 'Home::save');
 $routes->get('/profile', 'Profile::index');
 $routes->get('/article', 'Article::index');
-$routes->get('/article/details', 'Article::details');
+$routes->get('/article/(:segment)', 'Article::details/$1');
 $routes->get('/gallery', 'Gallery::index');
 
 // Login Page

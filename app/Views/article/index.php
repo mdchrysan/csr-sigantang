@@ -66,6 +66,17 @@
                 </div>
             </div>
         </div>
+        <?php foreach ($article as $a) : ?>
+            <div class="col">
+                <a href="/article/<?= $a['slug']; ?>" class="card h-100">
+                    <img src="/img/<?= $a['photo']; ?>" class="card-img-top" alt="article image">
+                    <div class="card-body">
+                        <h5 class="card-title"><?= $a['title']; ?></h5>
+                        <p class="card-text"><?= date('d M Y', strtotime($a['updated_at'])); ?></p>
+                    </div>
+                </a>
+            </div>
+        <?php endforeach ?>
     </div>
 </section>
 <?= $this->endSection(); ?>

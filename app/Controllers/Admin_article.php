@@ -31,10 +31,6 @@ class Admin_article extends BaseController
             'currentPage'   => $currentPage
         ];
 
-        // if (empty($data['article'])) {
-        //     throw new \CodeIgniter\Exceptions\PageNotFoundException('Artikel ' . $slug . ' tidak ditemukan.');
-        // }
-
         return view('admin/article/dashboard', $data);
     }
 
