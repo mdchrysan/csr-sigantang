@@ -70,7 +70,7 @@ class Admin_article extends BaseController
                 ]
             ],
             'photo' => [
-                'rules' => 'max_size[photo,5120]|is_image[photo]|mime_in[photo,image/jpg,image/jpeg,image/png]',
+                'rules' => 'max_size[photo,6144]|is_image[photo]|mime_in[photo,image/jpg,image/jpeg,image/png]',
                 'errors' => [
                     'max_size' => 'Ukuran foto terlalu besar.',
                     'is_image'  => 'Yang Anda pilih bukan gambar.',
@@ -184,7 +184,7 @@ class Admin_article extends BaseController
                 ]
             ],
             'photo' => [
-                'rules' => 'max_size[photo,5120]|is_image[photo]|mime_in[photo,image/jpg,image/jpeg,image/png]',
+                'rules' => 'max_size[photo,6144]|is_image[photo]|mime_in[photo,image/jpg,image/jpeg,image/png]',
                 'errors' => [
                     'max_size' => 'Ukuran foto terlalu besar.',
                     'is_image'  => 'Yang Anda pilih bukan gambar.',

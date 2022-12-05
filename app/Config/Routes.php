@@ -60,6 +60,7 @@ $routes->get('/edit-article/(:segment)', 'Admin_article::edit/$1');
 $routes->post('/update-article/(:segment)', 'Admin_article::update/$1');
 $routes->get('/photo-list', 'Admin_gallery::index');
 $routes->post('/save-photo', 'Admin_gallery::save');
+$routes->post('/upload-photo/(:num)', 'Admin_gallery::upload/$1');
 $routes->delete('/delete-photo/(:num)', 'Admin_gallery::delete/$1');
 $routes->get('/feedback', 'Admin_feedback::index');
 

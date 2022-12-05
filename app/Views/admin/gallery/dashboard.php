@@ -77,19 +77,22 @@
                                     <!-- Superadmin Upload Button -->
                                     <?php if (session()->id_role == 1) : ?>
                                         <!-- Upload Trigger -->
-                                        <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#uploadPhotoModal"><i class="fa-solid fa-arrow-up-from-bracket"></i></button>
+                                        <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#uploadPhotoModal<?= $p['id']; ?>"><i class="fa-solid fa-arrow-up-from-bracket"></i></button>
                                         <!-- Upload Photo Modal -->
-                                        <div class="modal fade" id="uploadPhotoModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="uploadPhotoModalLabel" aria-hidden="true">
+                                        <div class="modal fade" id="uploadPhotoModal<?= $p['id']; ?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="uploadPhotoModalLabel" aria-hidden="true">
                                             <div class="modal-dialog modal-dialog-centered">
                                                 <div class="modal-content">
                                                     <div class="modal-body text-center mt-3">
                                                         <h3>Perhatian</h3>
                                                         <p>Apakah Anda yakin ingin mengunggah foto?</p>
                                                     </div>
-                                                    <div class="modal-footer btn-group p-0">
-                                                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Tidak</button>
-                                                        <button type="submit" class="btn btn-light">Ya</button>
-                                                    </div>
+                                                    <form action="/upload-photo/<?= $p['id']; ?>" method="POST">
+                                                        <?= csrf_field(); ?>
+                                                        <div class="modal-footer btn-group p-0">
+                                                            <button type="button" class="btn btn-light" data-bs-dismiss="modal">Tidak</button>
+                                                            <button type="submit" class="btn btn-light">Ya</button>
+                                                        </div>
+                                                    </form>
                                                 </div>
                                             </div>
                                         </div>

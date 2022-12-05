@@ -10,6 +10,6 @@ class GalleryModel extends Model
     protected $primaryKey = 'id';
     protected $allowedFields = ['filename', 'status'];
 
-    protected $useSoftDeletes = true;
+    // protected $useSoftDeletes = true;
     protected $useTimestamps = true;
 }

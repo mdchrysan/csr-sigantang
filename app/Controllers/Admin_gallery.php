@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\GalleryModel;
+use App\Models\PublishedGalleryModel;
 
 class Admin_gallery extends BaseController
 {
@@ -11,6 +12,7 @@ class Admin_gallery extends BaseController
     public function __construct()
     {
         $this->galleryModel = new GalleryModel();
+        $this->publishedModel = new PublishedGalleryModel();
     }
 
     public function index()
@@ -37,7 +39,7 @@ class Admin_gallery extends BaseController
         // photo validation
         if (!$this->validate([
             'photo' => [
-                'rules' => 'max_size[photo,5120]|is_image[photo]|mime_in[photo,image/jpg,image/jpeg,image/png]',
+                'rules' => 'max_size[photo,6144]|is_image[photo]|mime_in[photo,image/jpg,image/jpeg,image/png]',
                 'errors' => [
                     'max_size'  => 'Ukuran foto terlalu besar.',
                     'is_image'  => 'Yang Anda pilih bukan gambar.',
@@ -65,11 +67,39 @@ class Admin_gallery extends BaseController
         return redirect()->to('/photo-list')->with('pesan', 'Foto berhasil ditambahkan.');
     }
 
+    public function upload($id)
+    {
+        $photo = $this->galleryModel->find($id);
+        try {
+            $this->publishedModel->save([
+                'photos_id' => $photo['id'],
+            ]);
+        } catch (\Exception $e) {
+            return redirect()->to('/photo-list')->with('pesan', 'Foto telah dipublikasi sebelumnya.');
+        }
+
+        // change photo's status ("Dalam proses" -> "Terpublikasi")
+        // save with id = edit
+        $this->galleryModel->save([
+            'id' => $id,
+            'status' => "Terpublikasi",
+        ]);
+
+        // disable button upload on admin photo list
+        // ...
+
+        return redirect()->to('/photo-list')->with('pesan', 'Foto berhasil dipublikasi.');
+    }
+
     public function delete($id)
     {
         $photo = $this->galleryModel->find($id);
-        unlink('img/' . $photo['filename']);
-        $this->galleryModel->delete($id);
+        try {
+            unlink('img/' . $photo['filename']);
+            $this->galleryModel->delete($id);
+        } catch (\Exception $e) {
+            $this->galleryModel->delete($id);
+        }
         return redirect()->to('/photo-list')->with('pesan', 'Foto berhasil dihapus.');
     }
 }
