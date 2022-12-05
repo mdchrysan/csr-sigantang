@@ -36,6 +36,13 @@
                 <img src="https://www.summitbsa.org/wp-content/uploads/2019/10/placeholder.png" class="card-img" alt="gallery image">
             </div>
         </div>
+        <?php foreach ($photo as $p) : ?>
+            <div class="col">
+                <div class="h-100">
+                    <img src="/img/<?= $p['filename']; ?>" class="card-img" alt="gallery image">
+                </div>
+            </div>
+        <?php endforeach ?>
     </div>
 </section>
 <section class="content" id="instagram-photos">
