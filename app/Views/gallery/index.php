@@ -2,7 +2,7 @@
 
 <?= $this->section('content'); ?>
 <section class="content" id="photo-gallery">
-    <div>
+    <div class="content-head text-center">
         <h1>Galeri Foto</h1>
     </div>
     <div class="row row-cols-1 row-cols-md-3 g-4 p-4">

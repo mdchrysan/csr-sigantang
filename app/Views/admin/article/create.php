@@ -19,7 +19,7 @@
                     <label for="articleContent" class="form-label">Isi Artikel</label>
                     <div class="row">
                         <div class="col-sm-9 mb-2">
-                            <textarea class="form-control form-input <?= ($validation->hasError('content')) ? 'is-invalid' : ''; ?>" id="articleContent" rows="5" name="content"><?= old('content'); ?></textarea>
+                            <textarea class="form-control form-input <?= ($validation->hasError('content')) ? 'is-invalid' : ''; ?>" id="articleContent" rows="5" name="content" placeholder="Tulis &quot;&lt;br&gt;&quot; sebagai pengganti Enter"><?= old('content'); ?></textarea>
                             <div class="invalid-feedback">
                                 <?= $validation->getError('content'); ?>
                             </div>

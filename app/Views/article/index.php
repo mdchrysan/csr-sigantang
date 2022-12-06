@@ -2,15 +2,16 @@
 
 <?= $this->section('content'); ?>
 <section class="content" id="article-section">
-    <div class="content-title">
-        <h1>Berita Terkini</h1>
+    <div class="content-head text-center">
+        <h1>Seputar Sigantang</h1>
     </div>
-    <div class="container-fluid">
+    <!-- Search Bar: postpone -->
+    <!-- <div class="container-fluid">
         <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="Cari Artikel" aria-label="Search">
-            <!-- <button class="btn btn-outline-success" type="submit">Cari</button> -->
+            <button class="btn btn-outline-success" type="submit">Cari</button>
         </form>
-    </div>
+    </div> -->
     <div class="row row-cols-1 row-cols-md-3 g-4 p-4">
         <div class="col">
             <div class="card h-100">
@@ -68,11 +69,11 @@
         </div>
         <?php foreach ($article as $a) : ?>
             <div class="col">
-                <a href="/article/<?= $a['slug']; ?>" class="card h-100">
+                <a href="/article/<?= $a['slug']; ?>" class="card h-100 card-link">
                     <img src="/img/<?= $a['photo']; ?>" class="card-img-top" alt="article image">
                     <div class="card-body">
                         <h5 class="card-title"><?= $a['title']; ?></h5>
-                        <p class="card-text"><?= date('d M Y', strtotime($a['updated_at'])); ?></p>
+                        <p class="card-date"><?= date('d M Y', strtotime($a['updated_at'])); ?></p>
                     </div>
                 </a>
             </div>

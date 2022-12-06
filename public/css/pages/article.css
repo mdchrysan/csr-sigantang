@@ -1,0 +1,56 @@
+.content-head {
+    padding-top: 4rem;
+}
+
+.card-link {
+    text-decoration: none;
+}
+
+.card-link:hover {
+    box-shadow:  0px 0px 30px var(--main-plantation);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    object-position: 50% 5%;
+}
+
+.card-title {
+    color: black;
+}
+
+.card-date {
+    color: var(--trans-black);
+}
+
+.curr-article {
+    margin: 50px 0;
+    padding: 10px 100px;
+}
+
+@media only screen and (min-width: 992px) {
+    .curr-article {
+        padding: 10px 250px;
+    }
+}
+
+#curr-article-date {
+    margin-bottom: 1.5rem;
+    color: var(--main-plantation);
+}
+
+.curr-img {
+    min-width: 40vh;
+    max-width: 100%;
+    height: auto;
+}
+
+#curr-article-desc {
+    margin: 2rem 0;
+}
+
+#curr-author {
+    margin-bottom: 0.4rem;
+    color: var(--main-plantation);
+}
