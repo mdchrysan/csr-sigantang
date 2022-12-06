@@ -18,10 +18,21 @@
 
 .card-title {
     color: black;
+    margin: 0;
 }
 
 .card-date {
-    color: var(--trans-black);
+    color: var(--main-plantation);
+    margin: 5px 0;
+}
+
+.card-category {
+    border-radius: 50px;
+    background-color: var(--main-plantation);
+    font-size: x-small;
+    color: white;
+    max-width: fit-content;
+    padding: 0 10px;
 }
 
 .curr-article {

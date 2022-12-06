@@ -222,7 +222,6 @@ class Admin_article extends BaseController
             'author'    => $this->request->getVar('author'),
             'category'  => $this->request->getVar('category'),
             'photo'     => $photoName,
-            'status'    => "dalam proses"
         ]);
 
         return redirect()->to('/article-list')->with('pesan', 'Data berhasil diubah.');

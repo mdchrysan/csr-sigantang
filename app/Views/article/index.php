@@ -13,67 +13,16 @@
         </form>
     </div> -->
     <div class="row row-cols-1 row-cols-md-3 g-4 p-4">
-        <div class="col">
-            <div class="card h-100">
-                <img src="https://www.summitbsa.org/wp-content/uploads/2019/10/placeholder.png" class="card-img-top" alt="article image">
-                <div class="card-body">
-                    <h5 class="card-title">Judul Artikel</h5>
-                    <p class="card-text">Tanggal Publikasi</p>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <a href="/article/details" class="card h-100">
-                <img src="https://www.summitbsa.org/wp-content/uploads/2019/10/placeholder.png" class="card-img-top" alt="article image">
-                <div class="card-body">
-                    <h5 class="card-title">Judul Artikel</h5>
-                    <p class="card-text">Tanggal Publikasi</p>
-                </div>
-            </a>
-        </div>
-        <div class="col">
-            <div class="card h-100">
-                <img src="https://www.summitbsa.org/wp-content/uploads/2019/10/placeholder.png" class="card-img-top" alt="article image">
-                <div class="card-body">
-                    <h5 class="card-title">Judul Artikel</h5>
-                    <p class="card-text">Tanggal Publikasi</p>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card h-100">
-                <img src="https://www.summitbsa.org/wp-content/uploads/2019/10/placeholder.png" class="card-img-top" alt="article image">
-                <div class="card-body">
-                    <h5 class="card-title">Judul Artikel</h5>
-                    <p class="card-text">Tanggal Publikasi</p>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card h-100">
-                <img src="https://www.summitbsa.org/wp-content/uploads/2019/10/placeholder.png" class="card-img-top" alt="article image">
-                <div class="card-body">
-                    <h5 class="card-title">Judul Artikel</h5>
-                    <p class="card-text">Tanggal Publikasi</p>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card h-100">
-                <img src="https://www.summitbsa.org/wp-content/uploads/2019/10/placeholder.png" class="card-img-top" alt="article image">
-                <div class="card-body">
-                    <h5 class="card-title">Judul Artikel</h5>
-                    <p class="card-text">Tanggal Publikasi</p>
-                </div>
-            </div>
-        </div>
         <?php foreach ($article as $a) : ?>
             <div class="col">
                 <a href="/article/<?= $a['slug']; ?>" class="card h-100 card-link">
                     <img src="/img/<?= $a['photo']; ?>" class="card-img-top" alt="article image">
                     <div class="card-body">
                         <h5 class="card-title"><?= $a['title']; ?></h5>
-                        <p class="card-date"><?= date('d M Y', strtotime($a['updated_at'])); ?></p>
+                        <p class="card-date"><?= date('j M Y', strtotime($a['updated_at'])); ?></p>
+                        <div class="card-category">
+                            <p><?= $a['category']; ?></p>
+                        </div>
                     </div>
                 </a>
             </div>
